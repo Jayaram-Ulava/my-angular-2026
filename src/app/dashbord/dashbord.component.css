@@ -1,0 +1,100 @@
+/* ===== Global Reset ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+/* ===== Main Layout ===== */
+.parent {
+    display: flex;
+    height: 100vh;
+    background-color: #f1f5f9;
+}
+
+/* ===== Sidebar ===== */
+.left {
+    width: 260px;
+    background: #0f172a;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 15px;
+}
+
+/* ===== App Logo / Title ===== */
+.left h1 {
+    font-size: 24px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 35px;
+    color: #38bdf8;
+    letter-spacing: 1px;
+}
+
+/* ===== Navigation Menu ===== */
+.left ul {
+    list-style: none;
+    flex: 1; /* pushes logout button to bottom */
+}
+
+/* ===== Menu Items ===== */
+.left ul li {
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    background: #1e293b;
+    transition: all 0.3s ease;
+    font-size: 15px;
+}
+
+/* ===== Hover Effect ===== */
+.left ul li:hover {
+    background: #38bdf8;
+    color: #0f172a;
+}
+
+/* ===== Active Route (Angular routerLinkActive) ===== */
+.left ul li.active {
+    background: #0ea5e9;
+    color: white;
+    font-weight: 500;
+}
+
+/* ===== Logout Button ===== */
+.left button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: #ef4444;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* ===== Logout Hover ===== */
+.left button:hover {
+    background: #dc2626;
+}
+
+/* ===== Right Content Area ===== */
+.right {
+    flex: 1;
+    padding: 30px;
+    background: #f8fafc;
+}
+
+/* ===== Example Dashboard Content Box ===== */
+.right::before {
+    display: block;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 22px;
+    font-weight: 600;
+    color: #0f172a;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
