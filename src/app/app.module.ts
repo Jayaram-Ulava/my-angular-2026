@@ -12,6 +12,13 @@ import { ReactiveFormsModule}  from '@angular/forms';
 import { HomeComponent } from './home/home.component';
 import { WellcomeComponent } from './wellcome/wellcome.component';
 
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
+import { FormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -26,7 +33,13 @@ import { WellcomeComponent } from './wellcome/wellcome.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatSlideToggleModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatCardModule,
+    MatInputModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatIconModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

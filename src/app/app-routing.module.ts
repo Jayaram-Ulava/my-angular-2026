@@ -6,6 +6,7 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { WellcomeComponent } from './wellcome/wellcome.component';
 import { HomeComponent } from './home/home.component';
 
+
 const routes: Routes = [
   {path:'dashbord',component:DashbordComponent,children:[
     {path:'home',component:HomeComponent},
