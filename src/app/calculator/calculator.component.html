@@ -1,0 +1,44 @@
+<div class="container">
+
+  <mat-card class="calculator">
+
+    <div class="card-header">
+      <h2>Calculator</h2>
+      <span>Simple arithmetic operations</span>
+    </div>
+
+    <div class="form-section">
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>First Number</mat-label>
+        <input matInput type="number" [(ngModel)]="fristnum">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline" class="full">
+        <mat-label>Second Number</mat-label>
+        <input matInput type="number" [(ngModel)]="secondnum">
+      </mat-form-field>
+
+    </div>
+
+    <div class="actions">
+      <button mat-flat-button class="btn add" (click)="sum()">Add</button>
+      <button mat-flat-button class="btn sub" (click)="sub()">Subtract</button>
+      <button mat-flat-button class="btn mul" (click)="mul()">Multiply</button>
+      <button mat-flat-button class="btn div" (click)="div()">Divide</button>
+    </div>
+
+    <div class="result-section">
+      <div class="result-label">Result</div>
+      <div class="result-value">{{ totle }}</div>
+    </div>
+
+    <div class="footer">
+      <button mat-stroked-button class="reset-btn" (click)="clear()">
+        Reset
+      </button>
+    </div>
+
+  </mat-card>
+
+</div>

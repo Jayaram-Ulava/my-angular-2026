@@ -1,0 +1,116 @@
+/* Page Background */
+.container {
+  height: 100vh;
+  background-color: #eef1f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+/* Card */
+.calculator {
+  width: 480px;
+  padding: 32px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* Header */
+.card-header {
+  margin-bottom: 24px;
+}
+
+.card-header h2 {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.card-header span {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Form */
+.form-section {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.full {
+  width: 100%;
+}
+
+/* ===== PROFESSIONAL BUTTONS ===== */
+.actions {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.btn {
+  height: 48px;
+  font-weight: 600;
+  text-transform: none;
+  border-radius: 8px;
+  transition: all 0.25s ease;
+  color: white;
+}
+
+/* Custom Button Colors */
+.add {
+  background-color: #2563eb;   /* Blue */
+}
+
+.sub {
+  background-color: #f59e0b;   /* Orange */
+}
+
+.mul {
+  background-color: #10b981;   /* Green */
+}
+
+.div {
+  background-color: #ef4444;   /* Red */
+}
+
+/* Hover Effect */
+.btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  opacity: 0.95;
+}
+
+/* Result Section */
+.result-section {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f9fafb;
+  border-radius: 10px;
+  border: 1px solid #e5e7eb;
+}
+
+.result-label {
+  font-size: 13px;
+  color: #888;
+}
+
+.result-value {
+  font-size: 34px;
+  font-weight: 700;
+  margin-top: 8px;
+}
+
+/* Reset Button */
+.footer {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.reset-btn {
+  border-radius: 8px;
+  font-weight: 500;
+}

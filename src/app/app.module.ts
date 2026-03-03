@@ -25,6 +25,7 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { DataBindingComponent } from './data-binding/data-binding.component';
+import { CalculatorComponent } from './calculator/calculator.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
     PagenotfoundComponent,
     HomeComponent,
     WellcomeComponent,
-    DataBindingComponent
+    DataBindingComponent,
+    CalculatorComponent
   ],
   imports: [
     BrowserModule,
@@ -54,6 +56,10 @@ import { DataBindingComponent } from './data-binding/data-binding.component';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
+    MatInputModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule
     
   ],
   providers: [],
