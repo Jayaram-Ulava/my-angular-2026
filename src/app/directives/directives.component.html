@@ -1,0 +1,41 @@
+<!-- directives -->
+
+<!--strictural directiives  -->
+<p *ngFor="let citie of cities">{{citie}}</p>
+
+
+<ol>
+    <li *ngFor="let city of cities">{{city}}</li>
+</ol>
+<select name="" id="">
+    <option value="" *ngFor="let city of cities">{{city}}</option>
+</select>
+
+<div *ngFor="let produ of products">
+{{produ.name}}  price is :{{produ.price}}
+
+</div>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>Num</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Color</th>
+        </tr>
+    </thead>
+
+    <thead>
+        <tr *ngFor="let product of products; index as i">
+            <td>{{i+1}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.price}}</td>
+            <td>{{product.color}}</td>
+        </tr>
+    </thead>
+</table>
+
+<!-- *ngif -->
+
+<h1 *ngIf="showHeader">Helloooo Angular</h1>
