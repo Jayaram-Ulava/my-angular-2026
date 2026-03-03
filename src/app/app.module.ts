@@ -26,6 +26,7 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatListModule } from '@angular/material/list';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { CalculatorComponent } from './calculator/calculator.component';
+import { DirectivesComponent } from './directives/directives.component';
 
 
 @NgModule({
@@ -37,7 +38,8 @@ import { CalculatorComponent } from './calculator/calculator.component';
     HomeComponent,
     WellcomeComponent,
     DataBindingComponent,
-    CalculatorComponent
+    CalculatorComponent,
+    DirectivesComponent
   ],
   imports: [
     BrowserModule,
