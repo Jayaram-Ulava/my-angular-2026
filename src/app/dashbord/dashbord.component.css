@@ -1,100 +1,152 @@
-/* ===== Global Reset ===== */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Segoe UI", Roboto, Arial, sans-serif;
-}
-
-/* ===== Main Layout ===== */
-.parent {
-    display: flex;
+.dashboard-container {
     height: 100vh;
-    background-color: #f1f5f9;
 }
 
-/* ===== Sidebar ===== */
-.left {
+/* SIDEBAR */
+.sidebar {
     width: 260px;
-    background: #0f172a;
-    color: #ffffff;
+    background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
+    color: white;
     display: flex;
     flex-direction: column;
-    padding: 20px 15px;
 }
 
-/* ===== App Logo / Title ===== */
-.left h1 {
-    font-size: 24px;
-    font-weight: 600;
+/* LOGO */
+.logo-section {
     text-align: center;
-    margin-bottom: 35px;
-    color: #38bdf8;
-    letter-spacing: 1px;
-}
-
-/* ===== Navigation Menu ===== */
-.left ul {
-    list-style: none;
-    flex: 1; /* pushes logout button to bottom */
-}
-
-/* ===== Menu Items ===== */
-.left ul li {
-    padding: 12px 15px;
-    margin-bottom: 12px;
-    border-radius: 8px;
-    cursor: pointer;
-    background: #1e293b;
-    transition: all 0.3s ease;
-    font-size: 15px;
-}
-
-/* ===== Hover Effect ===== */
-.left ul li:hover {
-    background: #38bdf8;
-    color: #0f172a;
-}
-
-/* ===== Active Route (Angular routerLinkActive) ===== */
-.left ul li.active {
-    background: #0ea5e9;
-    color: white;
-    font-weight: 500;
-}
-
-/* ===== Logout Button ===== */
-.left button {
-    padding: 12px;
-    border: none;
-    border-radius: 8px;
-    background: #ef4444;
-    color: white;
-    font-size: 15px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-/* ===== Logout Hover ===== */
-.left button:hover {
-    background: #dc2626;
-}
-
-/* ===== Right Content Area ===== */
-.right {
-    flex: 1;
-    padding: 30px;
-    background: #f8fafc;
-}
-
-/* ===== Example Dashboard Content Box ===== */
-.right::before {
-    display: block;
-    background: white;
     padding: 20px;
-    border-radius: 10px;
-    font-size: 22px;
-    font-weight: 600;
-    color: #0f172a;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.logo-icon {
+    font-size: 45px;
+    height: 45px;
+    width: 45px;
+}
+
+.logo-text {
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+/* MENU */
+.menu-list {
+    flex: 1;
+}
+
+.menu-list a {
+    margin: 5px 10px;
+    border-radius: 8px;
+    color: white;
+}
+
+.menu-list a:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+/* ACTIVE MENU */
+.active-menu {
+    background: linear-gradient(45deg, #2196f3, #21cbf3);
+    color: white;
+}
+
+/* LOGOUT */
+.logout-section {
+    padding: 15px;
+}
+
+.logout-btn {
+    width: 100%;
+}
+
+/* TOP NAVBAR */
+.top-navbar {
+    background: white;
+    color: #333;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* TITLE */
+.page-title {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* SPACER */
+.spacer {
+    flex: 1;
+}
+
+/* CONTENT */
+.content-area {
+    padding: 25px;
+    background: #f4f6f9;
+    min-height: calc(100vh - 64px);
+}
+
+/* From Uiverse.io by vinodjangid07 */ 
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 45px;
+  height: 45px;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition-duration: .3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(255, 65, 65);
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: .3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: .3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 40px;
+  transition-duration: .3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: .3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: .3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px ,2px);
 }

@@ -5,12 +5,14 @@ import { LoginComponent } from './login/login.component';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { WellcomeComponent } from './wellcome/wellcome.component';
 import { HomeComponent } from './home/home.component';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
 
 const routes: Routes = [
   {path:'dashbord',component:DashbordComponent,children:[
     {path:'home',component:HomeComponent},
-    {path:'wellcome',component:WellcomeComponent}
+    {path:'wellcome',component:WellcomeComponent},
+    {path:'databinding',component:DataBindingComponent}
   ]},
   {path:'login',component:LoginComponent},
   {path:'',component:LoginComponent},

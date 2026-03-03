@@ -1,0 +1,15 @@
+
+<!-- Data Binding Example -->
+
+ <!-- interpolation -->
+<h1>my name is{{name}} my age is {{age}}</h1>
+
+<!-- two-way binding -->
+<input type="text" placeholder="city" [(ngModel)]="city">
+
+<!-- event binding -->
+<button (click)="submit()">up</button>
+
+<!-- property binding -->
+<button [disabled]="isinvalid">Upload</button>
+<h1>{{city}}</h1>

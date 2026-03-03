@@ -18,6 +18,14 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatIconModule } from '@angular/material/icon';
 import { FormsModule } from '@angular/forms';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatListModule } from '@angular/material/list';
+import { DataBindingComponent } from './data-binding/data-binding.component';
+
 
 @NgModule({
   declarations: [
@@ -26,7 +34,8 @@ import { FormsModule } from '@angular/forms';
     DashbordComponent,
     PagenotfoundComponent,
     HomeComponent,
-    WellcomeComponent
+    WellcomeComponent,
+    DataBindingComponent
   ],
   imports: [
     BrowserModule,
@@ -39,7 +48,13 @@ import { FormsModule } from '@angular/forms';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    FormsModule
+    FormsModule,
+    MatDividerModule,
+    MatCheckboxModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

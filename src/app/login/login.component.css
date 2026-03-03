@@ -1,49 +1,69 @@
-/* Full screen gradient background */
-.login-container {
+/* Full page wrapper */
+.login-wrapper {
     height: 100vh;
+    width: 100%;
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(135deg, #667eea, #764ba2);
 }
 
-/* Glassmorphism card */
+/* Background image */
+.background-image {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    /* background-image: url("assets/91e6664c-bd8b-48c6-a68d-dc04966b2ab7.jpg"); your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Dark overlay */
+.background-image::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+}
+
+/* Login card */
 .login-card {
+    position: relative;
     width: 400px;
-    padding: 35px;
-    border-radius: 16px;
+    padding: 30px;
+    border-radius: 15px;
     background: rgba(255,255,255,0.95);
     backdrop-filter: blur(10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    z-index: 1;
 }
 
-/* Logo section */
-.logo-section {
+/* Header */
+.login-header {
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
-.logo-icon {
+.login-icon {
     font-size: 60px;
-    color: #667eea;
-    width: 60px;
-    height: 60px;
+    color: #3f51b5;
 }
 
-.logo-section h2 {
+.login-header h2 {
     margin: 10px 0 5px;
     font-weight: 600;
 }
 
-.logo-section p {
-    color: #777;
-    font-size: 14px;
+.login-header p {
+    color: gray;
 }
 
 /* Full width fields */
 .full-width {
     width: 100%;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
 }
 
 /* Login button */
@@ -52,6 +72,7 @@
     height: 45px;
     font-size: 16px;
     border-radius: 8px;
+    margin-top: 10px;
 }
 
 /* Links */
@@ -62,16 +83,11 @@
 }
 
 .extra-links a {
-    font-size: 13px;
+    color: #3f51b5;
     text-decoration: none;
-    color: #667eea;
 }
 
-.extra-links a:hover {
-    text-decoration: underline;
-}
-
-/* Hover animation */
+/* Hover effect */
 .login-card:hover {
     transform: translateY(-5px);
     transition: 0.3s;

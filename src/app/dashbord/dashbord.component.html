@@ -1,17 +1,86 @@
-<div class="parent">
-    <div class="left">
-        <h1>My-Projuct</h1>
-        <ul>
-            <li routerLink="home" >Home</li>
-            <li routerLink="wellcome">wellcome</li>
-        </ul>
-        <button routerLink="/login">Logout</button>
+<mat-sidenav-container class="dashboard-container">
 
-    </div>
-    <div class="right">
+  <!-- Sidebar -->
+  <mat-sidenav mode="side" opened class="sidebar">
 
-        <router-outlet></router-outlet>
-
+    <!-- Logo -->
+    <div class="logo-section">
+      <mat-icon class="logo-icon">monitor</mat-icon>
+      <h2 class="logo-text">My Project</h2>
     </div>
 
-</div>
+    <mat-divider></mat-divider>
+
+    <!-- Menu -->
+    <mat-nav-list class="menu-list">
+
+      <a mat-list-item routerLink="home" routerLinkActive="active-menu">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </a>
+
+      <a mat-list-item routerLink="wellcome" routerLinkActive="active-menu">
+        <mat-icon>dashboard</mat-icon>
+        <span>Welcome</span>
+      </a>
+
+      <a mat-list-item>
+        <mat-icon>analytics</mat-icon>
+        <span routerLink="databinding">Data-binding</span>
+      </a>
+
+      <a mat-list-item>
+        <mat-icon>settings</mat-icon>
+        <span>Settings</span>
+      </a>
+
+    </mat-nav-list>
+
+    <!-- Logout Button at Bottom -->
+    <div class="logout-section">
+      <!-- From Uiverse.io by vinodjangid07 --> 
+<button class="Btn" routerLink="/login">
+  
+  <div class="sign" ><svg viewBox="0 0 512 512"><path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path></svg></div>
+  
+  <div class="text "> Logout</div>
+</button>
+
+
+
+    </div>
+
+  </mat-sidenav>
+
+
+  <!-- Main Content -->
+  <mat-sidenav-content>
+
+    <!-- Top Navbar -->
+    <mat-toolbar class="top-navbar">
+
+      <span class="page-title">Dashboard</span>
+
+      <span class="spacer"></span>
+
+      <button mat-icon-button>
+        <mat-icon>notifications</mat-icon>
+      </button>
+
+      <button mat-icon-button>
+        <mat-icon>account_circle</mat-icon>
+      </button>
+
+    </mat-toolbar>
+
+
+    <!-- Content Area -->
+    <div class="content-area">
+
+      <router-outlet></router-outlet>
+
+    </div>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>

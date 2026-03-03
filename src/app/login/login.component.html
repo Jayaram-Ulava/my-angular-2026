@@ -1,52 +1,37 @@
-<div class="login-container">
+<div class="login-wrapper">
 
+  <!-- Background Image -->
+  <div class="background-image"></div>
+
+  <!-- Login Card -->
   <mat-card class="login-card">
 
-    <!-- Logo -->
-    <div class="logo-section">
-      <mat-icon class="logo-icon">account_circle</mat-icon>
+    <div class="login-header">
+      <mat-icon class="login-icon">account_circle</mat-icon>
       <h2>Welcome Back</h2>
-      <p>Please login to continue</p>
+      <p>Please login to your account</p>
     </div>
 
-    <!-- Form -->
-    <form [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Email</mat-label>
+      <input matInput placeholder="Enter your email">
+      <mat-icon matSuffix>email</mat-icon>
+    </mat-form-field>
 
-      <!-- Email -->
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Email Address</mat-label>
-        <input matInput formControlName="email">
-        <mat-icon matSuffix>email</mat-icon>
-      </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Password</mat-label>
+      <input matInput type="password" placeholder="Enter your password">
+      <mat-icon matSuffix>lock</mat-icon>
+    </mat-form-field>
 
-      <!-- Password -->
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Password</mat-label>
-        <input matInput [type]="hidePassword ? 'password' : 'text'" formControlName="password">
+    <mat-checkbox class="remember">Remember me</mat-checkbox>
 
-        <button mat-icon-button matSuffix type="button"
-                (click)="hidePassword = !hidePassword">
+    <button mat-raised-button color="primary"
+            class="login-button"
+            routerLink="/dashbord">
+      Login
+    </button>
 
-          <mat-icon>
-            {{hidePassword ? 'visibility_off' : 'visibility'}}
-          </mat-icon>
-
-        </button>
-
-      </mat-form-field>
-
-      <!-- Login button -->
-      <button mat-raised-button color="primary"
-              class="login-button"
-              routerLink="/dashbord">
-
-        Login
-
-      </button>
-
-    </form>
-
-    <!-- Links -->
     <div class="extra-links">
       <a href="#">Forgot Password?</a>
       <a href="#">Create Account</a>
