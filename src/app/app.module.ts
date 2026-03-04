@@ -27,6 +27,8 @@ import { MatListModule } from '@angular/material/list';
 import { DataBindingComponent } from './data-binding/data-binding.component';
 import { CalculatorComponent } from './calculator/calculator.component';
 import { DirectivesComponent } from './directives/directives.component';
+import { EventRegistrationComponent } from './event-registration/event-registration.component';
+import { BmiComponent } from './bmi/bmi.component';
 
 
 @NgModule({
@@ -39,7 +41,9 @@ import { DirectivesComponent } from './directives/directives.component';
     WellcomeComponent,
     DataBindingComponent,
     CalculatorComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    EventRegistrationComponent,
+    BmiComponent
   ],
   imports: [
     BrowserModule,

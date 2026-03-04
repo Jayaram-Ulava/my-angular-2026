@@ -1,0 +1,48 @@
+<div class="background">
+
+  <div class="content-wrapper">
+
+    <!-- LEFT SIDE IMAGE -->
+    <div class="left-image">
+      <img src="https://thumbs.dreamstime.com/z/creative-vector-illustration-bmi-body-mass-index-infographic-chart-silhouettes-scale-isolated-transparent-131524404.jpg?ct=jpeg" 
+           alt="BMI Image">
+    </div>
+
+    <!-- RIGHT SIDE BMI CARD -->
+    <div class="right-form">
+
+      <mat-card class="bmi-card">
+
+        <h1>BMI Calculator</h1>
+        <p>Check your Body Mass Index</p>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Height (cm)</mat-label>
+          <input matInput type="number" [(ngModel)]="bminum1" name="height">
+        </mat-form-field>
+
+        <mat-form-field appearance="outline" class="full-width">
+          <mat-label>Weight (kg)</mat-label>
+          <input matInput type="number" [(ngModel)]="bminum2" name="weight">
+        </mat-form-field>
+
+        <button 
+          mat-raised-button 
+          color="primary" 
+          class="full-width"
+          (click)="submit()">
+          Calculate
+        </button>
+
+        <div class="result" *ngIf="bmitwo">
+          <h2>{{ bmitwo }}</h2>
+          <span>{{ bmiwehit }}</span>
+        </div>
+
+      </mat-card>
+
+    </div>
+
+  </div>
+
+</div>
