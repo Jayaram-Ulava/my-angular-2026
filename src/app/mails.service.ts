@@ -11,4 +11,9 @@ export class MailsService {
   getmails() {
     return this.httpmails.get('https://jsonplaceholder.typicode.com/todos');
   }
+
+  getdelete(){
+  return this.httpmails.get('https://jsonplaceholder.typicode.com/todos');
+
+  }
 }
