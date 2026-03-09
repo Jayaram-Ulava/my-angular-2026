@@ -1,63 +1,80 @@
-<div class="container mt-4">
+<div class="container mt-5">
 
-  <h2 class="text-center mb-4">Vehicle Details</h2>
+  <div class="card shadow-lg main-card">
 
-  <div class="table-responsive">
+    <div class="card-header text-white header-style">
+      <h3 class="text-center m-0">🚗 Vehicle Details</h3>
+    </div>
 
-    <table class="table table-bordered table-hover table-striped" border="2">
+    <div class="card-body">
 
-      <thead class="table-dark">
-        <tr>
-          <th>#</th>
-          <th>Image</th>
-          <th>Vehicle</th>
-          <th>Manufacturer</th>
-          <th>Model</th>
-          <th>Type</th>
-          <th>Fuel</th>
-          <th>Color</th>
-          <th>Cost</th>
-          <th>Tyres</th>
-          <th>Action</th>
-        </tr>
-      </thead>
+      <div class="table-responsive">
 
-      <tbody>
+        <table class="table custom-table align-middle">
 
-        <tr *ngFor="let v of vehicles; let i=index">
+          <thead>
+            <tr>
+              <th>#</th>
+              <th>Image</th>
+              <th>Vehicle</th>
+              <th>Manufacturer</th>
+              <th>Model</th>
+              <th>Type</th>
+              <th>Fuel</th>
+              <th>Color</th>
+              <th>Cost</th>
+              <th>Tyres</th>
+              <th>Action</th>
+            </tr>
+          </thead>
 
-          <td>{{i+1}}</td>
+          <tbody>
 
-          <td>
-            <img 
-            src="{{v.image}}"
-            class="vehicle-img">
-          </td>
+            <tr *ngFor="let v of vehicles; let i=index">
 
-          <td>{{v.Vehicle}}</td>
-          <td>{{v.manufacturer}}</td>
-          <td>{{v.model}}</td>
-          <td>{{v.type}}</td>
-          <td>
-            <span class="badge bg-success">{{v.fuel}}</span>
-          </td>
+              <td>{{i+1}}</td>
 
-          <td>{{v.color }}</td>
-          <td>{{v.cost }}</td>
-          <td>{{v.tyres}}</td>
+              <td>
+                <img src="{{v.image}}" class="vehicle-img">
+              </td>
 
-          <td>
-            <button class="btn btn-danger btn-sm"
-            (click)="deleteVehicle(i)">
-            Delete
-            </button>
-          </td>
+              <td class="vehicle-name">{{v.Vehicle}}</td>
 
-        </tr>
+              <td>{{v.manufacturer}}</td>
 
-      </tbody>
+              <td>{{v.model}}</td>
 
-    </table>
+              <td>
+                <span class="badge type-badge">{{v.type}}</span>
+              </td>
+
+              <td>
+                <span class="badge fuel-badge">{{v.fuel}}</span>
+              </td>
+
+              <td>{{v.color}}</td>
+
+              <td class="price">₹ {{v.cost}}</td>
+
+              <td>{{v.tyres}}</td>
+
+              <td>
+                <button 
+                class="btn btn-danger btn-sm delete-btn"
+                (click)="deleteVehicle(i)">
+                Delete
+                </button>
+              </td>
+
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+    </div>
 
   </div>
 

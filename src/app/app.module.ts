@@ -32,6 +32,8 @@ import { BmiComponent } from './bmi/bmi.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
+import { AcountsComponent } from './acounts/acounts.component';
+import { FlipcartComponent } from './flipcart/flipcart.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { MatTableModule } from '@angular/material/table';
     DirectivesComponent,
     EventRegistrationComponent,
     BmiComponent,
-    VehiclesComponent
+    VehiclesComponent,
+    AcountsComponent,
+    FlipcartComponent
   ],
   imports: [
     BrowserModule,
