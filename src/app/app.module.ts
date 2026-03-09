@@ -34,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { MatTableModule } from '@angular/material/table';
 import { AcountsComponent } from './acounts/acounts.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
+import { MailsComponent } from './mails/mails.component';
 
 
 @NgModule({
@@ -51,7 +52,8 @@ import { FlipcartComponent } from './flipcart/flipcart.component';
     BmiComponent,
     VehiclesComponent,
     AcountsComponent,
-    FlipcartComponent
+    FlipcartComponent,
+    MailsComponent
   ],
   imports: [
     BrowserModule,

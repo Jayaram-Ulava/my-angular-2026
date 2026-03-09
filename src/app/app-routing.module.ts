@@ -13,6 +13,7 @@ import { BmiComponent } from './bmi/bmi.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
 import { AcountsComponent } from './acounts/acounts.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
+import { MailsComponent } from './mails/mails.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
     {path:'bmi',component:BmiComponent},
     {path:'vehicle',component:VehiclesComponent},
     {path:'acounts',component:AcountsComponent},
-    {path:'flipcard',component:FlipcartComponent}
+    {path:'flipcard',component:FlipcartComponent},
+    {path:'mails',component:MailsComponent}
   ]},
   {path:'login',component:LoginComponent},
   {path:'',component:LoginComponent},

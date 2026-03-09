@@ -1,0 +1,9 @@
+
+
+<div class="mail-container">
+    <h1>Mails</h1>
+    <ol >
+        <li *ngFor="let maildata of maillist"  [ngClass]="{'yellow':maildata.completed==false, 'black':maildata.completed==true}">{{maildata.title}}</li>
+
+    </ol>
+</div>
