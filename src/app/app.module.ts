@@ -29,6 +29,9 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { BmiComponent } from './bmi/bmi.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -43,7 +46,8 @@ import { BmiComponent } from './bmi/bmi.component';
     CalculatorComponent,
     DirectivesComponent,
     EventRegistrationComponent,
-    BmiComponent
+    BmiComponent,
+    VehiclesComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +69,9 @@ import { BmiComponent } from './bmi/bmi.component';
     MatInputModule,
     MatButtonModule,
     MatCardModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    MatTableModule
     
   ],
   providers: [],

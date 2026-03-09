@@ -10,6 +10,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { BmiComponent } from './bmi/bmi.component';
+import { VehiclesComponent } from './vehicles/vehicles.component';
 
 
 const routes: Routes = [
@@ -20,7 +21,8 @@ const routes: Routes = [
     {path:'calculator',component:CalculatorComponent},
     {path:'directives',component:DirectivesComponent},
     {path:'eventregistration',component:EventRegistrationComponent},
-    {path:'bmi',component:BmiComponent}
+    {path:'bmi',component:BmiComponent},
+    {path:'vehicle',component:VehiclesComponent}
   ]},
   {path:'login',component:LoginComponent},
   {path:'',component:LoginComponent},
