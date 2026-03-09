@@ -1,0 +1,64 @@
+<div class="container mt-4">
+
+  <h2 class="text-center mb-4">Vehicle Details</h2>
+
+  <div class="table-responsive">
+
+    <table class="table table-bordered table-hover table-striped" border="2">
+
+      <thead class="table-dark">
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>Vehicle</th>
+          <th>Manufacturer</th>
+          <th>Model</th>
+          <th>Type</th>
+          <th>Fuel</th>
+          <th>Color</th>
+          <th>Cost</th>
+          <th>Tyres</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let v of vehicles; let i=index">
+
+          <td>{{i+1}}</td>
+
+          <td>
+            <img 
+            src="{{v.image}}"
+            class="vehicle-img">
+          </td>
+
+          <td>{{v.Vehicle}}</td>
+          <td>{{v.manufacturer}}</td>
+          <td>{{v.model}}</td>
+          <td>{{v.type}}</td>
+          <td>
+            <span class="badge bg-success">{{v.fuel}}</span>
+          </td>
+
+          <td>{{v.color }}</td>
+          <td>{{v.cost }}</td>
+          <td>{{v.tyres}}</td>
+
+          <td>
+            <button class="btn btn-danger btn-sm"
+            (click)="deleteVehicle(i)">
+            Delete
+            </button>
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+  </div>
+
+</div>

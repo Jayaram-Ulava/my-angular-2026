@@ -1,0 +1,35 @@
+.container{
+    max-width: 1300px;
+}
+
+h2{
+    font-weight: 600;
+    color: #333;
+}
+
+.vehicle-img{
+    width: 60px;
+    height: 40px;
+    object-fit: contain;
+}
+
+table th{
+    text-align: center;
+}
+
+table td{
+    vertical-align: middle;
+}
+
+.badge{
+    padding:6px 10px;
+    font-size:12px;
+}
+
+button{
+    transition:0.2s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}
