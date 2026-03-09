@@ -1,0 +1,81 @@
+/* Page background */
+body{
+background:#f4f6f9;
+}
+
+/* Wrapper */
+.accounts-wrapper{
+background:white;
+padding:25px;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.title{
+font-weight:600;
+color:#333;
+}
+
+/* Table header */
+.accounts-table thead{
+background:#0d6efd;
+color:white;
+font-size:15px;
+}
+
+/* Table spacing */
+.accounts-table th,
+.accounts-table td{
+padding:14px;
+text-align:center;
+vertical-align:middle;
+}
+
+/* Profile image */
+.profile-image{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+border:3px solid #eee;
+}
+
+/* Account name */
+.account-name{
+font-weight:600;
+color:#333;
+}
+
+/* Balance highlight */
+.balance{
+font-weight:700;
+color:#198754;
+font-size:16px;
+}
+
+/* Hover effect */
+.accounts-table tbody tr{
+transition:0.2s;
+}
+
+.accounts-table tbody tr:hover{
+background:#f1f7ff;
+transform:scale(1.01);
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+.accounts-table th,
+.accounts-table td{
+font-size:13px;
+padding:10px;
+}
+
+.profile-image{
+width:40px;
+height:40px;
+}
+
+}

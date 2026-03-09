@@ -1,35 +1,104 @@
-.container{
-    max-width: 1300px;
+body{
+    background:#f4f6f9;
 }
 
-h2{
-    font-weight: 600;
-    color: #333;
+/* Card */
+.main-card{
+    border-radius:12px;
+    overflow:hidden;
 }
 
+/* Header */
+.header-style{
+    background:linear-gradient(45deg,#007bff,#00c6ff);
+    font-weight:600;
+}
+
+/* Table */
+.custom-table{
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.custom-table thead{
+    background:#343a40;
+    color:white;
+}
+
+.custom-table th{
+    text-align:center;
+    padding:12px;
+}
+
+.custom-table td{
+    text-align:center;
+    padding:10px;
+}
+
+/* Row hover */
+.custom-table tbody tr{
+    transition:0.3s;
+}
+
+.custom-table tbody tr:hover{
+    background:#f1f9ff;
+    transform:scale(1.01);
+}
+
+/* Vehicle image */
 .vehicle-img{
-    width: 60px;
-    height: 40px;
-    object-fit: contain;
+    width:70px;
+    height:45px;
+    object-fit:cover;
+    border-radius:6px;
+    border:2px solid #eee;
 }
 
-table th{
-    text-align: center;
+/* Vehicle name */
+.vehicle-name{
+    font-weight:600;
+    color:#333;
 }
 
-table td{
-    vertical-align: middle;
+/* Price */
+.price{
+    font-weight:600;
+    color:#28a745;
 }
 
-.badge{
-    padding:6px 10px;
-    font-size:12px;
+/* Badges */
+.type-badge{
+    background:#6c757d;
 }
 
-button{
+.fuel-badge{
+    background:#28a745;
+}
+
+/* Delete button */
+.delete-btn{
+    border-radius:20px;
+    padding:5px 14px;
     transition:0.2s;
 }
 
-button:hover{
-    transform:scale(1.05);
+.delete-btn:hover{
+    transform:scale(1.1);
+}
+/* Type badge - soft grey */
+.type-badge{
+    background-color:#e9ecef;
+    color:#495057;
+    padding:6px 12px;
+    border-radius:20px;
+    font-weight:500;
+}
+
+/* Fuel badge - soft green */
+.fuel-badge{
+    background-color:#d4edda;
+    color:#155724;
+    padding:6px 12px;
+    border-radius:20px;
+    font-weight:500;
 }

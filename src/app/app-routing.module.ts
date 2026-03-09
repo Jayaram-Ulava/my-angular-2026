@@ -11,6 +11,8 @@ import { DirectivesComponent } from './directives/directives.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { BmiComponent } from './bmi/bmi.component';
 import { VehiclesComponent } from './vehicles/vehicles.component';
+import { AcountsComponent } from './acounts/acounts.component';
+import { FlipcartComponent } from './flipcart/flipcart.component';
 
 
 const routes: Routes = [
@@ -22,7 +24,9 @@ const routes: Routes = [
     {path:'directives',component:DirectivesComponent},
     {path:'eventregistration',component:EventRegistrationComponent},
     {path:'bmi',component:BmiComponent},
-    {path:'vehicle',component:VehiclesComponent}
+    {path:'vehicle',component:VehiclesComponent},
+    {path:'acounts',component:AcountsComponent},
+    {path:'flipcard',component:FlipcartComponent}
   ]},
   {path:'login',component:LoginComponent},
   {path:'',component:LoginComponent},

@@ -1,0 +1,39 @@
+    <h1>Flipcard Items</h1>
+
+<div class="album-container">
+
+  <div *ngFor="let products of flipcardalllist" class="product-box">
+
+    <div class="image-section">
+
+      <div class="rating-badge">
+        ⭐ {{products.rating.rate}}
+      </div>
+
+      <img [src]="products.image" alt="product">
+
+    </div>
+
+    <div class="product-details">
+
+      <h4 class="product-title">
+        {{products.title}}
+      </h4>
+
+      <p class="product-category">
+        {{products.category}}
+      </p>
+
+      <div class="price">
+        ₹ {{products.price}}
+      </div>
+
+      <button class="cart-btn">
+        Add to Cart
+      </button>
+
+    </div>
+
+  </div>
+
+</div>
