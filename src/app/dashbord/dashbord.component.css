@@ -1,152 +1,129 @@
-.dashboard-container {
-    height: 100vh;
+/* Global reset */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Segoe UI;
 }
 
-/* SIDEBAR */
-.sidebar {
-    width: 260px;
-    background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
-    color: white;
-    display: flex;
-    flex-direction: column;
+/* Main container */
+
+.dashboard-container{
+display:flex;
+height:100vh;
+overflow:hidden;
+background:#f4f7fc;
 }
 
-/* LOGO */
-.logo-section {
-    text-align: center;
-    padding: 20px;
+/* Sidebar */
+
+.sidebar{
+width:250px;
+background:linear-gradient(180deg,#1e3c72,#2a5298);
+color:white;
+display:flex;
+flex-direction:column;
+justify-content:space-between;
+padding:20px;
 }
 
-.logo-icon {
-    font-size: 45px;
-    height: 45px;
-    width: 45px;
+/* Logo */
+
+.logo{
+font-size:22px;
+font-weight:bold;
+text-align:center;
+margin-bottom:20px;
 }
 
-.logo-text {
-    margin-top: 10px;
-    font-weight: bold;
+/* Menu */
+
+.menu{
+list-style:none;
+flex-grow:1;
+overflow-y:auto;
 }
 
-/* MENU */
-.menu-list {
-    flex: 1;
+.menu li{
+padding:12px;
+margin:6px 0;
+border-radius:8px;
+cursor:pointer;
+transition:0.3s;
 }
 
-.menu-list a {
-    margin: 5px 10px;
-    border-radius: 8px;
-    color: white;
+.menu li:hover{
+background:rgba(255,255,255,0.2);
+padding-left:18px;
 }
 
-.menu-list a:hover {
-    background: rgba(255,255,255,0.15);
+/* Logout */
+
+.logout-btn{
+background:#ff4b5c;
+border:none;
+color:white;
+padding:10px;
+border-radius:8px;
+cursor:pointer;
 }
 
-/* ACTIVE MENU */
-.active-menu {
-    background: linear-gradient(45deg, #2196f3, #21cbf3);
-    color: white;
+.logout-btn:hover{
+background:#ff2e43;
 }
 
-/* LOGOUT */
-.logout-section {
-    padding: 15px;
+/* Main Section */
+
+.main-section{
+flex:1;
+display:flex;
+flex-direction:column;
+overflow:hidden;
 }
 
-.logout-btn {
-    width: 100%;
+/* Navbar */
+
+.top-navbar{
+height:60px;
+background:white;
+display:flex;
+align-items:center;
+justify-content:space-between;
+padding:0 20px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* TOP NAVBAR */
-.top-navbar {
-    background: white;
-    color: #333;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+/* Title */
+
+.page-title{
+font-weight:bold;
+color:#333;
 }
 
-/* TITLE */
-.page-title {
-    font-weight: bold;
-    font-size: 20px;
+/* Icons */
+
+.nav-icons span{
+font-size:20px;
+margin-left:20px;
+cursor:pointer;
 }
 
-/* SPACER */
-.spacer {
-    flex: 1;
+/* Content */
+
+.content-area{
+flex:1;
+overflow-y:auto;
+padding:20px;
 }
 
-/* CONTENT */
-.content-area {
-    padding: 25px;
-    background: #f4f6f9;
-    min-height: calc(100vh - 64px);
+/* Scrollbar */
+
+.content-area::-webkit-scrollbar{
+width:6px;
 }
 
-/* From Uiverse.io by vinodjangid07 */ 
-.Btn {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  width: 45px;
-  height: 45px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
-  transition-duration: .3s;
-  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
-  background-color: rgb(255, 65, 65);
-}
-
-/* plus sign */
-.sign {
-  width: 100%;
-  transition-duration: .3s;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.sign svg {
-  width: 17px;
-}
-
-.sign svg path {
-  fill: white;
-}
-/* text */
-.text {
-  position: absolute;
-  right: 0%;
-  width: 0%;
-  opacity: 0;
-  color: white;
-  font-size: 1.2em;
-  font-weight: 600;
-  transition-duration: .3s;
-}
-/* hover effect on button width */
-.Btn:hover {
-  width: 125px;
-  border-radius: 40px;
-  transition-duration: .3s;
-}
-
-.Btn:hover .sign {
-  width: 30%;
-  transition-duration: .3s;
-  padding-left: 20px;
-}
-/* hover effect button's text */
-.Btn:hover .text {
-  opacity: 1;
-  width: 70%;
-  transition-duration: .3s;
-  padding-right: 10px;
-}
-/* button click effect*/
-.Btn:active {
-  transform: translate(2px ,2px);
+.content-area::-webkit-scrollbar-thumb{
+background:#888;
+border-radius:10px;
 }

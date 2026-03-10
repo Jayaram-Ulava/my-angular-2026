@@ -7,7 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class VehicleService {
 
-  constructor(private httpvehicle:HttpClient) { }
+  // constructor(private httpvehicle:HttpClient) { }
+
+  //   getvehicle():Observable<any> {
+  //     return this.httpvehicle.get('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction');
+  
+  // }
+   constructor(private httpvehicle:HttpClient) { }
 
     getvehicle():Observable<any> {
       return this.httpvehicle.get('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction');

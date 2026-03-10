@@ -10,7 +10,7 @@ body{
 
 /* Header */
 .header-style{
-    background:linear-gradient(45deg,#007bff,#00c6ff);
+    background:linear-gradient();
     font-weight:600;
 }
 

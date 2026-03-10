@@ -1,0 +1,113 @@
+body{
+background:linear-gradient(120deg,#84fab0,#8fd3f4);
+font-family:Segoe UI;
+}
+
+.title{
+font-weight:700;
+color:#2c3e50;
+}
+
+/* FORM */
+
+.form-card{
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.card-header{
+background:linear-gradient(45deg,#ff6a00,#ee0979);
+color:white;
+font-weight:bold;
+text-align:center;
+}
+
+.form-control{
+border-radius:8px;
+}
+
+/* BUTTON */
+
+.btn-add{
+background:#28a745;
+color:white;
+font-weight:bold;
+}
+
+.btn-add:hover{
+background:#1e7e34;
+}
+
+/* TABLE */
+
+.table-card{
+background:white;
+padding:20px;
+border-radius:12px;
+box-shadow:0 6px 15px rgba(0,0,0,0.2);
+}
+
+.table-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+gap:10px;
+}
+
+.search{
+width:200px;
+}
+
+thead{
+background:#343a40;
+color:white;
+}
+
+tbody tr:hover{
+background:#f1f8ff;
+}
+
+/* BADGE */
+
+.role{
+background:#007bff;
+padding:6px 10px;
+}
+
+/* SALARY */
+
+.salary{
+font-weight:bold;
+color:#28a745;
+}
+
+/* BUTTONS */
+
+.btn-low{
+background:#17a2b8;
+color:white;
+margin-right:5px;
+}
+
+.btn-high{
+background:#dc3545;
+color:white;
+margin-right:5px;
+}
+
+.btn-total{
+background:#6f42c1;
+color:white;
+}
+
+/* TOTAL BOX */
+
+.total-box{
+margin-top:15px;
+background:#ffeaa7;
+padding:10px;
+font-size:18px;
+font-weight:bold;
+text-align:center;
+border-radius:8px;
+}
