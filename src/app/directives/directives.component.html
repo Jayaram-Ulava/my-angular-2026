@@ -12,9 +12,18 @@
 </select>
 
 <div *ngFor="let produ of products">
-{{produ.name}}  price is :{{produ.price}}
+{{produ.name | uppercase}}  Price is :{{produ.price}}
 
 </div>
+
+<h3>{{today | date:'yy-MM-dd'}}</h3>
+<h3>{{today | date:'yyyy/MM/dd'}}</h3>
+<h3>{{today | date:'fullDate'}}</h3>
+
+
+
+
+
 
 <table border="1">
     <thead>
@@ -29,9 +38,9 @@
     <thead>
         <tr *ngFor="let product of products; index as i">
             <td>{{i+1}}</td>
-            <td>{{product.name}}</td>
-            <td>{{product.price}}</td>
-            <td>{{product.color}}</td>
+            <td [ngClass]="{'frist':product.price>=500, 'scand':product.price<=500}">{{product.name |uppercase}}</td>
+            <td [ngStyle]="{'color': product.price >= 500 ? 'red' : 'green'}">{{product.price |currency}}</td>
+            <td [ngClass]="{'frist':product.color==='red', 'scand':product.color==='green'}">{{product.color}}</td>
         </tr>
     </thead>
 </table>
@@ -39,3 +48,8 @@
 <!-- *ngif -->
 
 <h1 *ngIf="showHeader">Helloooo Angular</h1>
+
+<!-- di bug -->
+
+<pre>{{products | json}}</pre>
+

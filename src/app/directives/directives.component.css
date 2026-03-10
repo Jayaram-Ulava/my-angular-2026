@@ -1,0 +1,21 @@
+.frist {
+    color: rgb(248, 248, 10);
+    background-color: black;
+}
+.scand {
+    color: black;
+    background-color: rgb(32, 195, 43);
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+th {
+    background-color: #f2f2f2;
+}
+

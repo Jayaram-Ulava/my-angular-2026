@@ -21,4 +21,8 @@ export class DirectivesComponent {
   ]
 
   showHeader:boolean = false;
+
+  today:Date = new Date();
+
+  // user:any = {name:'Mohith',age:30,city:'Hyderabad'};
 }

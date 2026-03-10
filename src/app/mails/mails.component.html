@@ -1,0 +1,13 @@
+
+
+<div class="mail-container">
+    <h1>Mails</h1>
+
+    <!-- add section for new mail -->
+    
+    <ol>
+        <li *ngFor="let maildata of maillist" [ngClass]="{'yellow': !maildata.completed, 'black': maildata.completed}">
+            {{maildata.title}}
+        </li>
+    </ol>
+</div>
