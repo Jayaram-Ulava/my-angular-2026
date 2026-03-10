@@ -36,6 +36,8 @@ import { AcountsComponent } from './acounts/acounts.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
 import { MailsComponent } from './mails/mails.component';
 import { PricePipe } from './price.pipe';
+import { RolePipe } from './role.pipe';
+import { EmployeesComponent } from './employees/employees.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { PricePipe } from './price.pipe';
     AcountsComponent,
     FlipcartComponent,
     MailsComponent,
-    PricePipe
+    PricePipe,
+    RolePipe,
+    EmployeesComponent
   ],
   imports: [
     BrowserModule,
