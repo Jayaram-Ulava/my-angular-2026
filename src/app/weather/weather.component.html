@@ -4,30 +4,31 @@
 
         <h1>Weather in Hyderabad</h1>
 
-        <div class="sun"
-        [ngClass]="{
+        <h1>Jayaram</h1>
+
+        <div class="sun" [ngClass]="{
         'blue': weatherdata?.current_weather?.temperature < 19,
         'orange': weatherdata?.current_weather?.temperature >= 20 && weatherdata?.current_weather?.temperature < 30,
         'yellow': weatherdata?.current_weather?.temperature >= 30 && weatherdata?.current_weather?.temperature < 35,
         'red': weatherdata?.current_weather?.temperature > 35
         }">
         </div>
-
+        <!--  -->
         <h2>
-        {{weatherdata?.current_weather?.temperature}}
-        {{weatherdata?.current_weather_units?.temperature}}
+            {{weatherdata?.current_weather?.temperature}}
+            {{weatherdata?.current_weather_units?.temperature}}
         </h2>
 
         <h3>
-        Windspeed:
-        {{weatherdata?.current_weather?.windspeed}}
-        {{weatherdata?.current_weather_units?.windspeed}}
+            Windspeed:
+            {{weatherdata?.current_weather?.windspeed}}
+            {{weatherdata?.current_weather_units?.windspeed}}
         </h3>
 
         <h3>
-        Wind Direction:
-        {{weatherdata?.current_weather?.winddirection}}
-        {{weatherdata?.current_weather_units?.winddirection}}
+            Wind Direction:
+            {{weatherdata?.current_weather?.winddirection}}
+            {{weatherdata?.current_weather_units?.winddirection}}
         </h3>
 
         <h3 class="time-text">{{timedisply}}</h3>
