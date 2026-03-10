@@ -9,9 +9,14 @@ import { MailsService } from '../mails.service';
 export class MailsComponent {
 
   maillist:any=[];
-constructor(private gethttpmails:MailsService){
-this.getmailsall();
-}
+
+  constructor(private gethttpmails:MailsService){
+    this.getmailsall();
+  }
+
+  // add a new mail item when "Add one" button is clicked
+ 
+  
 
 getmailsall(){
   this.gethttpmails.getmails().subscribe((maildata:any)=>{
@@ -19,4 +24,5 @@ getmailsall(){
     this.maillist=maildata;
   })
 }
+
 }

@@ -2,11 +2,31 @@
     width: 650px;
 }
 
+/* section above list for adding a new mail */
+.add-section {
+    margin-bottom: 20px;
+}
+.add-section input {
+    padding: 5px;
+    width: 200px;
+    margin-right: 8px;
+}
+.btn-add {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+.btn-add:hover {
+    background-color: #45a049;
+}
+
 ol{
     font-size: 22px;
 }
 
-/* gap between list items */
 li{
     padding: 15px;
     margin-bottom: 15px;
@@ -14,12 +34,10 @@ li{
     border-radius: 6px;
 }
 
-/* completed false */
 .yellow{
     color: gray;
 }
 
-/* completed true */
 .black{
     color: black;
     font-weight: bold;
@@ -31,3 +49,4 @@ li:hover{
     transition: 0.2s;
     color: red;
 }
+
