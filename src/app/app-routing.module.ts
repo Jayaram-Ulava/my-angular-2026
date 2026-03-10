@@ -15,6 +15,7 @@ import { AcountsComponent } from './acounts/acounts.component';
 import { FlipcartComponent } from './flipcart/flipcart.component';
 import { MailsComponent } from './mails/mails.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { WeatherComponent } from './weather/weather.component';
 
 
 const routes: Routes = [
@@ -30,7 +31,9 @@ const routes: Routes = [
     {path:'acounts',component:AcountsComponent},
     {path:'flipcard',component:FlipcartComponent},
     {path:'mails',component:MailsComponent},
-    {path:'employees',component:EmployeesComponent}
+    {path:'employees',component:EmployeesComponent},
+    {path:'weather',component:WeatherComponent}
+
   ]},
   {path:'login',component:LoginComponent},
   {path:'',component:LoginComponent},

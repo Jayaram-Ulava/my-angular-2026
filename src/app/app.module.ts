@@ -39,6 +39,7 @@ import { VehicleService } from './vehicle.service';
 import { FlipcartComponent } from './flipcart/flipcart.component';
 import { AcountsComponent } from './acounts/acounts.component';
 import { HilightsDirective } from './hilights.directive';
+import { WeatherComponent } from './weather/weather.component';
 
 
 
@@ -63,7 +64,8 @@ import { HilightsDirective } from './hilights.directive';
     VehiclesComponent,
     FlipcartComponent,
     AcountsComponent,
-    HilightsDirective
+    HilightsDirective,
+    WeatherComponent,
   ],
   imports: [
     BrowserModule,
