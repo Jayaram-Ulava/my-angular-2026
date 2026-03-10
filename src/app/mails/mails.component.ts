@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { MailsService } from '../mails.service';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 @Component({
   selector: 'app-mails',
   templateUrl: './mails.component.html',
-  styleUrls: ['./mails.component.css']
+  styleUrls: ['./mails.component.css'],
 })
 export class MailsComponent {
 
@@ -13,11 +14,6 @@ export class MailsComponent {
   constructor(private gethttpmails:MailsService){
     this.getmailsall();
   }
-
-  // add a new mail item when "Add one" button is clicked
- 
-  
-
 getmailsall(){
   this.gethttpmails.getmails().subscribe((maildata:any)=>{
     console.log(maildata)

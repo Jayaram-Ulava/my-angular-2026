@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
@@ -29,15 +27,19 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { BmiComponent } from './bmi/bmi.component';
-import { VehiclesComponent } from './vehicles/vehicles.component';
 import { HttpClientModule } from '@angular/common/http';
-import { MatTableModule } from '@angular/material/table';
-import { AcountsComponent } from './acounts/acounts.component';
-import { FlipcartComponent } from './flipcart/flipcart.component';
-import { MailsComponent } from './mails/mails.component';
-import { PricePipe } from './price.pipe';
+import { BrowserModule } from '@angular/platform-browser';
 import { RolePipe } from './role.pipe';
+import { PricePipe } from './price.pipe';
+import { MailsComponent } from './mails/mails.component';
 import { EmployeesComponent } from './employees/employees.component';
+import { CapitalDirective } from './capital.directive';
+import { VehiclesComponent } from './vehicles/vehicles.component';
+import { VehicleService } from './vehicle.service';
+import { FlipcartComponent } from './flipcart/flipcart.component';
+import { AcountsComponent } from './acounts/acounts.component';
+import { HilightsDirective } from './hilights.directive';
+
 
 
 @NgModule({
@@ -53,13 +55,15 @@ import { EmployeesComponent } from './employees/employees.component';
     DirectivesComponent,
     EventRegistrationComponent,
     BmiComponent,
-    VehiclesComponent,
-    AcountsComponent,
-    FlipcartComponent,
     MailsComponent,
-    PricePipe,
+    EmployeesComponent,
     RolePipe,
-    EmployeesComponent
+    PricePipe,
+    CapitalDirective,
+    VehiclesComponent,
+    FlipcartComponent,
+    AcountsComponent,
+    HilightsDirective
   ],
   imports: [
     BrowserModule,
@@ -78,12 +82,18 @@ import { EmployeesComponent } from './employees/employees.component';
     MatSidenavModule,
     MatToolbarModule,
     MatListModule,
+    HttpClientModule,
+    BrowserModule,
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatSlideToggleModule,
+    ReactiveFormsModule,
+    MatCardModule,
     MatInputModule,
     MatButtonModule,
-    MatCardModule,
+    MatFormFieldModule,
     MatIconModule,
-    HttpClientModule,
-    MatTableModule
+    
     
   ],
   providers: [],

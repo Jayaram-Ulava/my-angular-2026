@@ -7,8 +7,6 @@ import { VehicleService } from '../vehicle.service';
   styleUrls: ['./vehicles.component.css']
 })
 export class VehiclesComponent {
-
-
   vehicles:any = [];
   constructor(private getvehicles:VehicleService){
    this.getvehiclesall();
@@ -25,6 +23,7 @@ export class VehiclesComponent {
   deleteVehicle(i:number) {
     this.vehicles.splice(i, 1);
   }
+
 
   
 
