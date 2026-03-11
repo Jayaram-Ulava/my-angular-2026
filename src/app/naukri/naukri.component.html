@@ -1,0 +1,132 @@
+<div class="page">
+
+<header class="header">
+
+<div class="left-header">
+
+<div class="logo">
+<div class="logo-circle">i</div>
+<h2>naukri</h2>
+</div>
+
+<nav class="menu">
+<a style="position: relative; bottom: 8px;">Jobs 
+<sup style="color: red; font-weight: 500; font-size:15px; text-shadow: 0px 0px 1px rgb(233, 17, 17);">
+{{employee.length}}
+</sup> 
+</a>
+<a>Companies</a>
+<a>Services</a>
+</nav>
+
+</div>
+
+<div class="search">
+<input type="text" placeholder="Search jobs here">
+<button>
+<i class="fa fa-search"></i>
+</button>
+</div>
+
+<div class="right-header">
+
+<button class="naukri360">naukri 360</button>
+
+<i class="fa-regular fa-bell icon" style="position: relative; top: 8px;">
+<sup style="color: red; font-weight: 500; font-size:15px; text-shadow: 0px 0px 1px rgb(233, 17, 17); position: relative; bottom: 30px; left: 20px;">
+05
+</sup>
+</i>
+
+<div class="profile">
+<i class="fa-solid fa-bars"></i>
+<img src="https://i.pravatar.cc/40" alt="profile">
+</div>
+
+</div>
+
+</header>
+
+
+
+<div class="container">
+
+<div class="left-content">
+
+<h3>Recommended jobs for you</h3>
+
+<div class="tabs">
+<span class="active">Applies (74)</span>
+<span>Profile (74)</span>
+<span>Top Candidate (6)</span>
+<span>You might like (75)</span>
+<span>Preferences (0)</span>
+</div>
+
+
+<div *ngFor="let details of employee">
+
+<div class="job-card">
+
+<h4>{{details.title}}</h4>
+
+<p class="company">
+{{details.company}} ⭐ 3.7 | {{details.number_of_opening}} Openings
+</p>
+
+<div class="job-info">
+<span>💼 {{details.employment_type}}</span>
+<span>₹ {{details.salary_from}} - {{details.salary_to}}</span>
+<span>📍 {{details.location}}</span>
+</div>
+
+<p class="desc">
+{{details.description}}
+</p>
+
+<div class="skills">
+{{details.job_category}}
+</div>
+
+<div class="footer">
+<span class="tag">Openings: {{details.number_of_opening}}</span>
+<span>{{details.created_at}}</span>
+</div>
+
+</div>
+
+</div>
+
+
+
+</div>
+
+
+
+<div class="right-content">
+
+<h4>Add preferences to get matching jobs</h4>
+
+<p>Preferred job role</p>
+
+<button class="add-btn">Add</button>
+
+<p class="space">Preferred work location</p>
+
+<div class="chips">
+<span>Remote</span>
+<span>Mumbai</span>
+<span>Hyderabad</span>
+<span>Chennai</span>
+<span>Bangalore</span>
+</div>
+
+<p class="space">Preferred salary</p>
+
+<div class="salary">₹ 7,00,000</div>
+
+</div>
+
+</div>
+
+</div>

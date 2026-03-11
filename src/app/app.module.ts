@@ -40,6 +40,8 @@ import { FlipcartComponent } from './flipcart/flipcart.component';
 import { AcountsComponent } from './acounts/acounts.component';
 import { HilightsDirective } from './hilights.directive';
 import { WeatherComponent } from './weather/weather.component';
+import { NaukriComponent } from './naukri/naukri.component';
+import { ContactModule } from './contact/contact.module';
 
 
 
@@ -66,6 +68,7 @@ import { WeatherComponent } from './weather/weather.component';
     AcountsComponent,
     HilightsDirective,
     WeatherComponent,
+    NaukriComponent,
   ],
   imports: [
     BrowserModule,
@@ -95,6 +98,7 @@ import { WeatherComponent } from './weather/weather.component';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
+    ContactModule
     
     
   ],

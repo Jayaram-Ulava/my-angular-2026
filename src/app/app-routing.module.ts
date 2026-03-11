@@ -16,6 +16,9 @@ import { FlipcartComponent } from './flipcart/flipcart.component';
 import { MailsComponent } from './mails/mails.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { WeatherComponent } from './weather/weather.component';
+import { NaukriComponent } from './naukri/naukri.component';
+import { ContcatCeoComponent } from './contact/contcat-ceo/contcat-ceo.component';
+import { ConcatDirectorComponent } from './contact/concat-director/concat-director.component';
 
 
 const routes: Routes = [
@@ -32,7 +35,10 @@ const routes: Routes = [
     {path:'flipcard',component:FlipcartComponent},
     {path:'mails',component:MailsComponent},
     {path:'employees',component:EmployeesComponent},
-    {path:'weather',component:WeatherComponent}
+    {path:'weather',component:WeatherComponent},
+    {path:'naukri',component:NaukriComponent},
+    {path:'contact',component:ContcatCeoComponent},
+    {path:'concatdirector',component:ConcatDirectorComponent}
 
   ]},
   {path:'login',component:LoginComponent},
