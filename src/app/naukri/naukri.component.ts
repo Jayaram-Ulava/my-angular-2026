@@ -19,5 +19,18 @@ export class NaukriComponent {
       this.employee= nakuridata;
     })
   }
+searchemp:any='';
+  searchjobs(){
+this.nauriservice.filterNaukriData(this.searchemp).subscribe((empdata:any)=>{
+  this.employee=empdata;
+})
+  }
+  pagenev(pagenav:number) {
+    this.nauriservice.pageNaukriData(pagenav).subscribe((pagevaveget:any)=>{
+this.employee=pagevaveget;
+    })
+  }
+
+
 
 }

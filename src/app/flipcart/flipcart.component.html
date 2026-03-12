@@ -1,6 +1,10 @@
     <h1>Flipcard Items</h1>
+     <label for="">Search Item:</label>
+<input type="text" placeholder="Enter to search" [(ngModel)]="keyword"  (keyup)="search()">
+     <div class="album-container">
 
 <div class="album-container">
+ 
 
   <div *ngFor="let products of flipcardalllist" class="product-box">
 
@@ -36,4 +40,11 @@
 
   </div>
 
+  <div>
+    <button *ngFor="let x of [].constructor(6); let i=index" 
+     (click)="pagenaction(i+1)">{{i+1}}
+
+    </button>
+
+  </div>
 </div>

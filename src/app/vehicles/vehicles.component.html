@@ -80,6 +80,8 @@
 
 </div> -->
 <div class="container mt-5">
+  <label for="">Search: </label>
+  <input type="text" [(ngModel)]="searchve" (keyup)="search()">
 
   <div class="card shadow-lg main-card">
     <div class="card-header text-white header-style">
@@ -100,8 +102,8 @@
               <th>Manufacturer</th>
               <th>Model</th>
               <th>Type</th>
-              <th>Fuel</th>
-              <th>Color</th>
+              <th (click)="sortvehicle('fuel')">Fuel</th>
+              <th (click)="sortvehicle('color')">Color</th>
               <th>Cost</th>
               <th>Tyres</th>
               <th>Action</th>
@@ -110,9 +112,9 @@
 
           <tbody>
 
-            <tr *ngFor="let v of vehicles; let i=index">
+            <tr *ngFor="let v of vehicles; ">
 
-              <td>{{i+1}}</td>
+              <td>{{v.id}}</td>
 
               <td>
                 <img src="{{v.image}}" class="vehicle-img">
@@ -124,7 +126,7 @@
 
               <td>{{v.model}}</td>
 
-              <td>
+              <td >
                 <span class="badge type-badge">{{v.type}}</span>
               </td>
 
@@ -141,7 +143,7 @@
               <td>
                 <button 
                 class="btn btn-danger btn-sm delete-btn"
-                (click)="deleteVehicle(i)">
+                (click)="deleteVehicle(v.id)">
                 Delete
                 </button>
               </td>
@@ -151,6 +153,16 @@
           </tbody>
 
         </table>
+<div>
+  <button (click)="prvi()">Pree</button>
+  
+   <button *ngFor="let x of [].constructor(8); let i=index" 
+   (click)="gottopage(i + 1)">{{i+ 1}}</button>
+        
+        <button (click)="nextpage()">Next</button>
+
+</div>
+       
 
       </div>
 

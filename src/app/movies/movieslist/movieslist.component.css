@@ -1,0 +1,192 @@
+body{
+background:#0f0f0f;
+font-family:Arial, Helvetica, sans-serif;
+color:white;
+}
+
+/* MAIN */
+
+.movies-main-content{
+width:95%;
+margin:auto;
+padding:20px;
+}
+
+/* SEARCH BAR */
+
+.top-bar{
+background:#1a1a1a;
+padding:15px;
+border-radius:8px;
+margin-bottom:25px;
+display:flex;
+gap:10px;
+align-items:center;
+}
+
+.top-bar label{
+color:#f5c518;
+font-weight:bold;
+}
+
+.top-bar input{
+padding:8px 12px;
+border:none;
+border-radius:6px;
+background:#333;
+color:white;
+width:250px;
+}
+
+/* TITLE */
+
+.title{
+color:#f5c518;
+margin-bottom:20px;
+}
+
+/* MOVIE CARD */
+
+.movie-list{
+background:#1a1a1a;
+margin-bottom:40px;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 10px 20px rgba(0,0,0,0.6);
+}
+
+/* BACKDROP */
+
+.backdrop{
+width:100%;
+height:280px;
+object-fit:cover;
+opacity:0.4;
+}
+
+/* MOVIE CONTENT */
+
+.movie-content{
+display:flex;
+gap:20px;
+padding:20px;
+margin-top:-120px;
+}
+
+/* POSTER */
+
+.movie-poster{
+width:180px;
+border-radius:8px;
+box-shadow:0 8px 20px rgba(0,0,0,0.7);
+}
+
+/* DETAILS */
+
+.movie-details{
+max-width:700px;
+}
+
+.movie-details h2{
+color:#f5c518;
+margin-bottom:10px;
+}
+
+.movie-details span{
+color:#f5c518;
+font-weight:bold;
+}
+
+.overview{
+color:#ccc;
+font-size:14px;
+margin-bottom:10px;
+}
+
+/* CAST SECTION */
+
+.cast-section{
+padding:20px;
+border-top:1px solid #333;
+}
+
+.cast-title{
+color:#f5c518;
+margin-bottom:15px;
+}
+
+/* CAST GRID */
+
+.cast-images{
+display:flex;
+gap:15px;
+flex-wrap:wrap;
+}
+
+.cast-card{
+background:#111;
+padding:10px;
+border-radius:8px;
+text-align:center;
+width:150px;
+transition:0.3s;
+}
+
+.cast-card:hover{
+transform:translateY(-6px);
+}
+
+.cast-card img{
+width:80px;
+height:80px;
+border-radius:50%;
+object-fit:cover;
+margin-bottom:6px;
+}
+
+.cast-card h4{
+font-size:14px;
+}
+
+.cast-card p{
+font-size:12px;
+color:#ccc;
+}
+
+.character{
+color:#f5c518;
+}
+
+/* PAGINATION */
+
+.pagination{
+display:flex;
+justify-content:center;
+gap:8px;
+margin-top:20px;
+}
+
+.pagination button{
+background:#222;
+color:white;
+border:none;
+padding:8px 14px;
+border-radius:5px;
+cursor:pointer;
+}
+
+.pagination button:hover{
+background:#f5c518;
+color:black;
+}
+
+.pagination button.active{
+background:#f5c518;
+color:black;
+font-weight:bold;
+}
+
+.pagination button:disabled{
+opacity:0.5;
+cursor:not-allowed;
+}

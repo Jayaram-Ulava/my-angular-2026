@@ -8,6 +8,7 @@ import { FlipcartService } from '../flipcart.service';
 })
 export class FlipcartComponent {
   flipcardalllist:any=[];
+  
   constructor(private getflipservice:FlipcartService) {
     this.getflipcardlist();
   }
@@ -18,5 +19,20 @@ export class FlipcartComponent {
       this.flipcardalllist = list;
     })
   }
+keyword:any='';
+  search() {
+    this.getflipservice.searchflipcard(this.keyword).subscribe((datafilter:any)=>{
+   this.flipcardalllist=datafilter
+    },(err:any)=>{
+      alert("Internal Server Error!")
+    })
 
+  }
+
+
+  pagenaction(pagedata:Number) {
+    this.getflipservice.pagenaction(pagedata).subscribe((pages:any)=>{
+        this.flipcardalllist=pages;
+    })
+  }
 }

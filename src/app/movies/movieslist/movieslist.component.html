@@ -1,0 +1,111 @@
+<div class="movies-main-content">
+
+<!-- SEARCH BAR -->
+
+<div class="top-bar">
+
+<label>Search</label>
+<input
+type="text"
+placeholder="Search Movies..."
+[(ngModel)]="searchValue"
+(keyup)="search()"
+/>
+
+</div>
+
+
+<!-- MOVIES LIST -->
+
+<div class="right-side">
+
+<h1 class="title">Movies List</h1>
+
+<div class="movie-list" *ngFor="let movies of moviesdisplay">
+
+<!-- BACKDROP -->
+
+<div class="movie-banner">
+
+<img src="{{movies.backdrop_path}}" class="backdrop">
+
+<div class="movie-content">
+
+<img src="{{movies.poster_path}}" class="movie-poster">
+
+<div class="movie-details">
+
+<h2>{{movies.original_title}}</h2>
+
+<p class="overview">
+{{movies.overview}}
+</p>
+
+<p><span>Language:</span> {{movies.original_language}}</p>
+<p><span>Release:</span> {{movies.release_date | date}}</p>
+<p><span>Rating:</span> ⭐ {{movies.vote_average}}</p>
+<p><span>Votes:</span> {{movies.vote_count}}</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- CAST SECTION -->
+
+<div class="cast-section">
+
+<h2 class="cast-title">🎬 Movie Cast</h2>
+
+<div class="cast-images">
+
+<div class="cast-card" *ngFor="let cast of movies?.casts?.slice(0,6)">
+
+<img [src]="cast?.profile_path">
+
+<h4>{{cast?.name}}</h4>
+
+<p>{{cast?.original_name}}</p>
+
+<p>⭐ {{cast?.popularity}}</p>
+
+<p class="character">{{cast?.character}}</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PAGINATION -->
+
+<div class="pagination">
+
+<button (click)="prevPage()" [disabled]="currentPage==1">
+Prev
+</button>
+
+<button
+*ngFor="let a of [].constructor(totalPages); let i=index"
+(click)="pagebutton(i+1)"
+[class.active]="currentPage==i+1"
+>
+
+{{i+1}}
+
+</button>
+
+<button (click)="nextPage()">
+Next
+</button>
+
+</div>
+
+</div>

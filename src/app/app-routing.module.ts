@@ -19,6 +19,7 @@ import { WeatherComponent } from './weather/weather.component';
 import { NaukriComponent } from './naukri/naukri.component';
 import { ContcatCeoComponent } from './contact/contcat-ceo/contcat-ceo.component';
 import { ConcatDirectorComponent } from './contact/concat-director/concat-director.component';
+import { PaymentsModule } from './payments/payments.module';
 
 
 const routes: Routes = [
@@ -38,7 +39,9 @@ const routes: Routes = [
     {path:'weather',component:WeatherComponent},
     {path:'naukri',component:NaukriComponent},
     {path:'contact',component:ContcatCeoComponent},
-    {path:'concatdirector',component:ConcatDirectorComponent}
+    {path:'concatdirector',component:ConcatDirectorComponent},
+    {path:'payments',loadChildren:()=>import('./payments/payments.module').then(m=>m.PaymentsModule)},
+    {path:'Movies',loadChildren:()=>import('./movies/movies.module').then(m=>m.MoviesModule)}
 
   ]},
   {path:'login',component:LoginComponent},
