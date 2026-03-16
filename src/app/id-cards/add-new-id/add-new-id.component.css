@@ -1,0 +1,39 @@
+body{
+    background: linear-gradient(120deg,#89f7fe,#66a6ff);
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.form-container{
+    max-width: 800px;
+}
+
+form{
+    border-radius: 10px;
+}
+
+.form-control{
+    border-radius: 8px;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus{
+    border-color:#007bff;
+    box-shadow:0 0 5px rgba(0,123,255,0.5);
+}
+
+label{
+    font-weight:600;
+}
+
+button{
+    border-radius:8px;
+    padding:10px 20px;
+    font-weight:600;
+    transition:0.3s;
+}
+
+button:hover{
+    transform:scale(1.05);
+}

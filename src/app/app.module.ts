@@ -35,14 +35,16 @@ import { MailsComponent } from './mails/mails.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { CapitalDirective } from './capital.directive';
 import { VehiclesComponent } from './vehicles/vehicles.component';
-import { VehicleService } from './vehicle.service';
 import { FlipcartComponent } from './flipcart/flipcart.component';
 import { AcountsComponent } from './acounts/acounts.component';
 import { HilightsDirective } from './hilights.directive';
 import { WeatherComponent } from './weather/weather.component';
 import { NaukriComponent } from './naukri/naukri.component';
 import { ContactModule } from './contact/contact.module';
-
+import { VehicleTwoComponent } from './vehicle-two/vehicle-two.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { RegistratorComponent } from './registrator/registrator.component';
 
 
 @NgModule({
@@ -69,6 +71,11 @@ import { ContactModule } from './contact/contact.module';
     HilightsDirective,
     WeatherComponent,
     NaukriComponent,
+    VehicleTwoComponent,
+    CreateUserComponent,
+    CreateVehicleComponent,
+    RegistratorComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -81,7 +88,6 @@ import { ContactModule } from './contact/contact.module';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    FormsModule,
     MatDividerModule,
     MatCheckboxModule,
     MatSidenavModule,
@@ -98,7 +104,8 @@ import { ContactModule } from './contact/contact.module';
     MatButtonModule,
     MatFormFieldModule,
     MatIconModule,
-    ContactModule
+    ContactModule,
+    FormsModule
     
     
   ],

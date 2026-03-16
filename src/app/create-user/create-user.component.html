@@ -1,0 +1,12 @@
+<form action="" [formGroup]="userform">
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" formControlName="name"><br>
+    <label for="lname">age:</label><br>
+    <input type="number" id="lname" name="lname" formControlName="age">
+    <label for="">email</label>
+    <input type="email" name="" id="" formControlName="email">
+    <label for="">phone</label>
+    <input type="number" name="" id="" formControlName="phone">
+
+    <button type="button" (click)="getuserdata()">Submit</button>
+</form>

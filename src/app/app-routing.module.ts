@@ -19,11 +19,15 @@ import { WeatherComponent } from './weather/weather.component';
 import { NaukriComponent } from './naukri/naukri.component';
 import { ContcatCeoComponent } from './contact/contcat-ceo/contcat-ceo.component';
 import { ConcatDirectorComponent } from './contact/concat-director/concat-director.component';
-import { PaymentsModule } from './payments/payments.module';
+import { VehicleTwoComponent } from './vehicle-two/vehicle-two.component';
+import { CreateUserComponent } from './create-user/create-user.component';
+import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
+import { RegistratorComponent } from './registrator/registrator.component';
+import { LoginGGuard } from './login-g.guard';
 
 
 const routes: Routes = [
-  {path:'dashbord',component:DashbordComponent,children:[
+  {path:'dashbord',component:DashbordComponent,canActivate:[LoginGGuard],children:[
     {path:'home',component:HomeComponent},
     {path:'wellcome',component:WellcomeComponent},
     {path:'databinding',component:DataBindingComponent},
@@ -41,9 +45,14 @@ const routes: Routes = [
     {path:'contact',component:ContcatCeoComponent},
     {path:'concatdirector',component:ConcatDirectorComponent},
     {path:'payments',loadChildren:()=>import('./payments/payments.module').then(m=>m.PaymentsModule)},
-    {path:'Movies',loadChildren:()=>import('./movies/movies.module').then(m=>m.MoviesModule)}
+    {path:'Movies',loadChildren:()=>import('./movies/movies.module').then(m=>m.MoviesModule)},
+    {path:'vehicletwo',component:VehicleTwoComponent},
+    {path:'idcard',loadChildren:()=>import('./id-cards/id-cards.module').then(im=>im.IdCardsModule)},
+    {path:'createuser',component:CreateUserComponent},
+    {path:'createvehicle',component:CreateVehicleComponent},
 
   ]},
+  {path:'registration',component:RegistratorComponent},
   {path:'login',component:LoginComponent},
   {path:'',component:LoginComponent},
   {path:'**',component:PagenotfoundComponent}

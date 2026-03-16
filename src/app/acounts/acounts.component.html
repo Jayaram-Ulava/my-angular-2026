@@ -1,6 +1,8 @@
 <div class="container mt-5">
 
+  
   <div class="accounts-wrapper">
+    <input type="text" [(ngModel)]="term" placeholder="Search accounts..." class="form-control mb-3" (keyup)="searchacout()">
 
     <h2 class="title text-center mb-4">
       Account Management
@@ -14,10 +16,11 @@
           <tr>
             <th>#</th>
             <th>Profile</th>
-            <th>Account Name</th>
-            <th>Account Number</th>
-            <th>City</th>
-            <th>Available Balance</th>
+            <th (click)="sort('account_name')">Account Name</th>
+            <th (click)="sort('account_number')">Account Number</th>
+            <th (click)="sort('city')">City</th>
+            <th (click)="sort('available_balance')">Available Balance</th>
+            <th>Actions</th>
           </tr>
         </thead>
 
@@ -25,7 +28,7 @@
 
           <tr *ngFor="let acc of acounts; let i=index">
 
-            <td>{{i+1}}</td>
+            <td>{{acc.id}}</td>
 
             <td>
               <img
@@ -48,6 +51,12 @@
             <td class="balance">
               ₹ {{acc.available_balance || 0}}
             </td>
+            <td class="actions">
+              <button class="btn btn-danger btn-sm delete-btn" (click)="deleteacout(acc.id)">
+                Delete
+              </button>
+
+            </td>
 
           </tr>
 
@@ -58,5 +67,19 @@
     </div>
 
   </div>
+  <div>
+    <button (click)="prev()">prev</button>
+    <button *ngFor="let x of [].constructor(10); let i=index"
+ (click)="pagenaction(i+1)">
+  {{i+1}}
+</button>
+
+<button (click)="next()">next</button>
+
+  </div>
+ 
 
 </div>
+
+
+ 

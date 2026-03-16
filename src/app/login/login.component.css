@@ -1,94 +1,67 @@
-/* Full page wrapper */
-.login-wrapper {
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.login-wrapper{
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:relative;
 }
 
-/* Background image */
-.background-image {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    /* background-image: url("assets/91e6664c-bd8b-48c6-a68d-dc04966b2ab7.jpg"); your image path */
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+.background-image{
+  position:absolute;
+  width:100%;
+  height:100%;
+  background-image:url("https://images.unsplash.com/photo-1557682250-33bd709cbe85");
+  background-size:cover;
+  background-position:center;
+  filter:blur(6px);
 }
 
-/* Dark overlay */
-.background-image::after {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,0.5);
+.login-card{
+  width:380px;
+  padding:35px;
+  border-radius:15px;
+  backdrop-filter: blur(10px);
+  background:rgba(255,255,255,0.9);
+  z-index:2;
 }
 
-/* Login card */
-.login-card {
-    position: relative;
-    width: 400px;
-    padding: 30px;
-    border-radius: 15px;
-    background: rgba(255,255,255,0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
-    z-index: 1;
+.login-header{
+  text-align:center;
+  margin-bottom:20px;
 }
 
-/* Header */
-.login-header {
-    text-align: center;
-    margin-bottom: 20px;
+.login-icon{
+  font-size:60px;
+  color:#3f51b5;
 }
 
-.login-icon {
-    font-size: 60px;
-    color: #3f51b5;
+.full-width{
+  width:100%;
+  margin-bottom:15px;
 }
 
-.login-header h2 {
-    margin: 10px 0 5px;
-    font-weight: 600;
+.login-button{
+  width:100%;
+  height:45px;
+  margin-top:10px;
+  font-size:16px;
 }
 
-.login-header p {
-    color: gray;
+.extra-links{
+  display:flex;
+  justify-content:space-between;
+  margin-top:15px;
 }
 
-/* Full width fields */
-.full-width {
-    width: 100%;
-    margin-bottom: 15px;
+.extra-links a{
+  text-decoration:none;
+  color:#3f51b5;
 }
 
-/* Login button */
-.login-button {
-    width: 100%;
-    height: 45px;
-    font-size: 16px;
-    border-radius: 8px;
-    margin-top: 10px;
+.extra-links a:hover{
+  text-decoration:underline;
 }
 
-/* Links */
-.extra-links {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 15px;
-}
-
-.extra-links a {
-    color: #3f51b5;
-    text-decoration: none;
-}
-
-/* Hover effect */
-.login-card:hover {
-    transform: translateY(-5px);
-    transition: 0.3s;
+.remember{
+  margin-top:5px;
 }

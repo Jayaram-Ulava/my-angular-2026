@@ -1,0 +1,123 @@
+<div class="container mt-4">
+
+
+    <div class="">
+        <button routerLink="/dashbord/idcard/add-id" class="btn btn-primary">Add New ID Card</button>
+
+    </div>
+<!-- SEARCH + SORT SECTION -->
+<div class="search-sort-container">
+
+<div class="row">
+
+<div class="col-md-4">
+<label class="label-title">Search ID Cards</label>
+<input
+type="text"
+class="form-control"
+placeholder="Enter student name..."
+(keyup)="onSearch()"
+[(ngModel)]="searchTerm">
+</div>
+
+<div class="col-md-3">
+<label class="label-title">Sort By</label>
+<select class="form-select" [(ngModel)]="column">
+<option value="name">Name</option>
+<option value="city">City</option>
+<option value="school_name">School Name</option>
+<option value="email">Email</option>
+</select>
+</div>
+
+<div class="col-md-3">
+<label class="label-title">Order</label>
+<select class="form-select" [(ngModel)]="order">
+<option value="asc">Ascending</option>
+<option value="desc">Descending</option>
+</select>
+</div>
+
+<div class="col-md-2 d-flex align-items-end">
+<button class="btn sort-btn w-100" (click)="onSort(column,order)">
+Sort
+</button>
+</div>
+
+</div>
+
+</div>
+
+<!-- ID CARDS -->
+<div class="row mt-4">
+
+<div class="col-md-6 mb-4" *ngFor="let id of idcardstudent">
+
+<div class="school-id-card">
+
+<!-- Header -->
+<div class="id-header">
+
+<div class="logo-area">
+<img [src]="id.school_logo">
+</div>
+
+<div class="school-info">
+<h4>{{id.school_name}}</h4>
+<p>{{id.school_city}} - {{id.school_pin}}</p>
+</div>
+
+</div>
+
+<!-- Body -->
+<div class="id-body">
+
+<div class="photo-section">
+<img [src]="id.profile_picture">
+</div>
+
+<div class="student-details">
+<p><span>Name :</span> {{id.name}}</p>
+<p><span>Class :</span> 10th</p>
+<p><span>DOB :</span> {{id.dob | date:'dd-MM-yyyy'}}</p>
+<p><span>Address :</span> {{id.city}}</p>
+<p><span>Phone :</span> {{id.phone}}</p>
+<p><span>Email :</span> {{id.email}}</p>
+</div>
+
+</div>
+
+<!-- Footer -->
+<div class="id-footer">
+    <button>Edite</button>
+    <button>View</button>
+    <button (click)="deleteids(id.id)">Delete</button>
+<span>ID : {{id.id}}</span>
+<span class="principal">Principal</span>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- PAGINATION -->
+
+<div class="pagination-container">
+
+<button class="page-btn" (click)="prev()">Prev</button>
+
+<button
+class="page-number"
+*ngFor="let x of [].constructor(10); let i=index"
+(click)="pagenaction(i+1)">
+{{i+1}}
+</button>
+
+<button class="page-btn" (click)="next()">Next</button>
+
+</div>
+
+</div>

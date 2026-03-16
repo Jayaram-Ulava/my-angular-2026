@@ -1,42 +1,73 @@
 <div class="login-wrapper">
 
-  <!-- Background Image -->
+  <!-- Background -->
   <div class="background-image"></div>
 
-  <!-- Login Card -->
-  <mat-card class="login-card">
+  <form [formGroup]="loginform">
 
-    <div class="login-header">
-      <mat-icon class="login-icon">account_circle</mat-icon>
-      <h2>Welcome Back</h2>
-      <p>Please login to your account</p>
-    </div>
+    <mat-card class="login-card">
 
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Email</mat-label>
-      <input matInput placeholder="Enter your email">
-      <mat-icon matSuffix>email</mat-icon>
-    </mat-form-field>
+      <div class="login-header">
+        <mat-icon class="login-icon">account_circle</mat-icon>
+        <h2>Welcome Back</h2>
+        <p>Please login to your account</p>
+      </div>
 
-    <mat-form-field appearance="outline" class="full-width">
-      <mat-label>Password</mat-label>
-      <input matInput type="password" placeholder="Enter your password">
-      <mat-icon matSuffix>lock</mat-icon>
-    </mat-form-field>
+      <!-- Email -->
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Email</mat-label>
 
-    <mat-checkbox class="remember">Remember me</mat-checkbox>
+        <input matInput
+               placeholder="Enter your username"
+               formControlName="username">
 
-    <button mat-raised-button color="primary"
-            class="login-button"
-            routerLink="/dashbord">
-      Login
-    </button>
+        <mat-icon matSuffix>email</mat-icon>
 
-    <div class="extra-links">
-      <a href="#">Forgot Password?</a>
-      <a href="#">Create Account</a>
-    </div>
+      </mat-form-field>
 
-  </mat-card>
+      <!-- Password -->
+      <mat-form-field appearance="outline" class="full-width">
+
+        <mat-label>Password</mat-label>
+
+        <input matInput
+               [type]="hidePassword ? 'password' : 'text'"
+               placeholder="Enter your password"
+               formControlName="password">
+
+        <button mat-icon-button
+                matSuffix
+                type="button"
+                (click)="togglePassword()">
+
+          <mat-icon>
+            {{hidePassword ? 'visibility_off' : 'visibility'}}
+          </mat-icon>
+
+        </button>
+
+      </mat-form-field>
+
+      <mat-checkbox class="remember">Remember me</mat-checkbox>
+
+      <!-- Login Button -->
+      <button mat-raised-button
+              color="primary"
+              class="login-button"
+              type="button"
+              (click)="login()">
+
+        Login
+
+      </button>
+
+      <div class="extra-links">
+        <a href="#">Forgot Password?</a>
+        <a href="#" routerLink="/registration">Create Account</a>
+      </div>
+
+    </mat-card>
+
+  </form>
 
 </div>
