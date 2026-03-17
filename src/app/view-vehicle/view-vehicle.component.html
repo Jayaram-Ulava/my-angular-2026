@@ -1,0 +1,66 @@
+<div class="container">
+
+  <div class="vehicle-card">
+
+    <!-- IMAGE -->
+    <div class="image-box">
+      <img *ngIf="viewvehicle.image; else noImg"
+           [src]="viewvehicle.image">
+
+      <ng-template #noImg>
+        <img src="https://via.placeholder.com/600x350?text=No+Image">
+      </ng-template>
+    </div>
+
+    <!-- CONTENT -->
+    <div class="content">
+
+      <h1>{{viewvehicle.Vehicle || 'Vehicle Name'}}</h1>
+
+      <div class="grid">
+
+        <div>
+          <label>Manufacturer</label>
+          <p>{{viewvehicle.manufacturer || '-'}}</p>
+        </div>
+
+        <div>
+          <label>Model</label>
+          <p>{{viewvehicle.model || '-'}}</p>
+        </div>
+
+        <div>
+          <label>Fuel</label>
+          <p>{{viewvehicle.fuel || '-'}}</p>
+        </div>
+
+        <div>
+          <label>Color</label>
+          <p>{{viewvehicle.color || '-'}}</p>
+        </div>
+
+        <div>
+          <label>Tyres</label>
+          <p>{{viewvehicle.tyres || 0}}</p>
+        </div>
+
+      </div>
+
+      <div class="footer">
+
+        <div class="price">
+          ₹ {{viewvehicle.cost || 0}}
+        </div>
+
+        <div class="buttons">
+          <button class="edit">Edit</button>
+          <button class="delete">Delete</button>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>

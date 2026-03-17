@@ -45,6 +45,7 @@ import { VehicleTwoComponent } from './vehicle-two/vehicle-two.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { RegistratorComponent } from './registrator/registrator.component';
+import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
 
 
 @NgModule({
@@ -75,6 +76,7 @@ import { RegistratorComponent } from './registrator/registrator.component';
     CreateUserComponent,
     CreateVehicleComponent,
     RegistratorComponent,
+    ViewVehicleComponent,
     
   ],
   imports: [

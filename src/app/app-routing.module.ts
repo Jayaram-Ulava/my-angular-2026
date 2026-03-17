@@ -24,6 +24,7 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { RegistratorComponent } from './registrator/registrator.component';
 import { LoginGGuard } from './login-g.guard';
+import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
 
 
 const routes: Routes = [
@@ -50,6 +51,7 @@ const routes: Routes = [
     {path:'idcard',loadChildren:()=>import('./id-cards/id-cards.module').then(im=>im.IdCardsModule)},
     {path:'createuser',component:CreateUserComponent},
     {path:'createvehicle',component:CreateVehicleComponent},
+    {path:'view-vehicle/:id',component:ViewVehicleComponent}
 
   ]},
   {path:'registration',component:RegistratorComponent},

@@ -51,4 +51,9 @@ export class VehicleService {
   updatevehicle(update:any):Observable<any> {
       return this.httpvehicle.put('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/'+update.id, update);
   }
+
+  viewatevehiclebyid(id:string):Observable<any>{
+    return this.httpvehicle.get('https://6128991386a213001729f9df.mockapi.io/test/v1/jurisdiction/'+id);  
+
+  }
 }

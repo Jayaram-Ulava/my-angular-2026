@@ -51,5 +51,8 @@ this.page=page;
 this.getvehicleQueryParams();
 }
 
+edite(){
+  
+}
 }
 
