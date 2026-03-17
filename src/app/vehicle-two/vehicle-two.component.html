@@ -4,7 +4,7 @@
     <button routerLink="/dashbord/createvehicle">Create Vehicle details</button>
         <table class="table custom-table align-middle">
 
-          <thead>
+          <thead >
             <tr>
               <th>#</th>
               <th>Image</th>
@@ -22,12 +22,12 @@
 
           <tbody>
 
-            <tr *ngFor="let v of vehicles; ">
+            <tr *ngFor="let v of vehicles; "routerLink="/dashbord/view-vehicle/{{v.id}}" >
 
               <td>{{v.id}}</td>
 
               <td>
-                <img src="{{v.image}}" class="vehicle-img">
+                <img src="{{v.image}}" class="vehicle-img" >
               </td>
 
               <td class="vehicle-name" >{{v.Vehicle  }} </td>
@@ -59,7 +59,7 @@
               </td>
 
               <td>
-                <button (click)="edite()">Edit</button>
+                <button routerLink="/dashbord/edit-vehicle/{{v.id}}">Edit</button>
               </td>
 
                <td>

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { VehicleService } from '../vehicle.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-create-vehicle',
@@ -9,9 +9,15 @@ import { Router } from '@angular/router';
   styleUrls: ['./create-vehicle.component.css']
 })
 export class CreateVehicleComponent {
+upid:string='';
 
-
-  constructor(private vehicleService:VehicleService, private routernav:Router) {
+  constructor(private vehicleService:VehicleService, private routernav:Router,private updatevehicle:ActivatedRoute) {
+    updatevehicle.params.subscribe((update:any)=>{
+this.upid=update.id;
+vehicleService.viewatevehiclebyid(update.id).subscribe((resupdate:any)=>{
+  this.createvehicleform.patchValue(resupdate);
+})
+    })
 
   }
   createvehicleform: FormGroup = new FormGroup({
@@ -27,15 +33,21 @@ export class CreateVehicleComponent {
   })
 
   getvehicledata(){
-    if(this.createvehicleform.value){
-this.vehicleService.createvehicle(this.createvehicleform.value).subscribe((res:any)=>{
+    if(this.upid){
+      this.vehicleService.updatevehicle(this.createvehicleform.value,this.upid).subscribe((res:any)=>{
+        alert('Vehicle updated successfully');
+        this.createvehicleform.reset(); 
+        this.routernav.navigateByUrl('/dashbord/vehicletwo');
+      })
+     
+}
+    else {
+ this.vehicleService.createvehicle(this.createvehicleform.value).subscribe((res:any)=>{
   alert('Vehicle created successfully');
   this.createvehicleform.reset(); 
 
   this.routernav.navigateByUrl('/dashbord/vehicletwo');
-})}
-    else {
-  alert('Please fill in all the required fields');
+})
 }
 
   }

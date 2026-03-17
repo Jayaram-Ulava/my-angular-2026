@@ -51,7 +51,8 @@ const routes: Routes = [
     {path:'idcard',loadChildren:()=>import('./id-cards/id-cards.module').then(im=>im.IdCardsModule)},
     {path:'createuser',component:CreateUserComponent},
     {path:'createvehicle',component:CreateVehicleComponent},
-    {path:'view-vehicle/:id',component:ViewVehicleComponent}
+    {path:'view-vehicle/:id',component:ViewVehicleComponent},
+    {path:'edit-vehicle/:id',component:CreateVehicleComponent}
 
   ]},
   {path:'registration',component:RegistratorComponent},
