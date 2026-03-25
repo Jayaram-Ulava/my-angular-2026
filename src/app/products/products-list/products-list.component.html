@@ -1,0 +1,118 @@
+<div class="container py-4">
+  <div class="row g-4">
+    <button class="btn btn-primary" routerLink="/dashbord/products/create-products">Add Product</button>
+
+    <label for="">Search:</label>
+    <input type="text" class="form-control mb-3" placeholder="Search products..." [(ngModel)]="searchTerm" (keyup)="onSearch()">
+    <!-- Product Card -->
+    <div class="col-md-6 col-lg-4" *ngFor="let product of totleproducts">
+      <div class="card h-100 shadow-sm border-0 rounded-3">
+
+        <!-- Product Image -->
+        <div class="overflow-hidden rounded-top">
+          <img 
+            [src]="product.thumbnail"
+            [alt]="product.title"
+            class="card-img-top img-fluid"
+            style="height: 220px; object-fit: cover;"
+          >
+        </div>
+
+        <div class="card-body d-flex flex-column">
+
+          <!-- Title -->
+          <h5 class="fw-bold mb-2 text-truncate">
+            {{ product.title }}
+          </h5>
+
+          <!-- Description -->
+          <p class="text-muted small mb-2">
+            {{ product.description | slice:0:100 }}...
+          </p>
+
+          <!-- Category & Brand -->
+          <div class="mb-2">
+            <span class="badge bg-primary me-1 text-capitalize">
+              {{ product.category }}
+            </span>
+            <span class="badge bg-dark">
+              {{ product.brand }}
+            </span>
+          </div>
+
+          <!-- Price Section -->
+          <div class="mb-2">
+            <span class="fs-5 fw-bold text-success">
+              ₹ {{ product.price }}
+            </span>
+            <span class="text-danger ms-2 small">
+              {{ product.discountPercentage }}% OFF
+            </span>
+          </div>
+
+          <!-- Rating & Stock -->
+          <div class="d-flex justify-content-between mb-2">
+            <span>⭐ {{ product.rating }}</span>
+            <span 
+              class="fw-semibold"
+              [ngClass]="product.stock > 0 ? 'text-success' : 'text-danger'"
+            >
+              {{ product.stock > 0 ? 'In Stock' : 'Out of Stock' }}
+            </span>
+          </div>
+
+          <hr class="my-2">
+
+          <!-- Tags -->
+          <div class="mb-2">
+            <small class="fw-semibold">Tags:</small><br>
+            <span 
+              class="badge bg-info text-dark me-1 mt-1"
+              *ngFor="let tag of product.tags"
+            >
+              {{ tag }}
+            </span>
+          </div>
+
+          <!-- Extra Info -->
+          <div class="small text-muted mb-2">
+            <div><strong>Warranty:</strong> {{ product.warrantyInformation }}</div>
+            <div><strong>Shipping:</strong> {{ product.shippingInformation }}</div>
+            <div>
+              <strong>Status:</strong> 
+              <span class="text-success">
+                {{ product.availabilityStatus }}
+              </span>
+            </div>
+          </div>
+
+          <hr class="my-2">
+
+          <!-- Meta Info -->
+          <div class="small text-muted mb-2">
+            <div>
+              <strong>Created:</strong> 
+              {{ product.meta.createdAt | date:'mediumDate' }}
+            </div>
+            <div>
+              <strong>Barcode:</strong> 
+              {{ product.meta.barcode }}
+            </div>
+          </div>
+
+          <!-- QR Code -->
+          <div class="text-center mt-auto">
+            <img 
+              [src]="product.meta.qrCode"
+              alt="QR Code"
+              class="img-thumbnail"
+              width="70"
+            >
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

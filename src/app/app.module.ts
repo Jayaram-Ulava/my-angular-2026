@@ -27,7 +27,7 @@ import { CalculatorComponent } from './calculator/calculator.component';
 import { DirectivesComponent } from './directives/directives.component';
 import { EventRegistrationComponent } from './event-registration/event-registration.component';
 import { BmiComponent } from './bmi/bmi.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RolePipe } from './role.pipe';
 import { PricePipe } from './price.pipe';
@@ -46,6 +46,9 @@ import { CreateUserComponent } from './create-user/create-user.component';
 import { CreateVehicleComponent } from './create-vehicle/create-vehicle.component';
 import { RegistratorComponent } from './registrator/registrator.component';
 import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
+import { AcountCreateComponent } from './acount-create/acount-create.component';
+import { ViewAcountComponent } from './view-acount/view-acount.component';
+import { TokenInterceptor } from './token.interceptor';
 
 
 @NgModule({
@@ -77,6 +80,8 @@ import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
     CreateVehicleComponent,
     RegistratorComponent,
     ViewVehicleComponent,
+    AcountCreateComponent,
+    ViewAcountComponent,
     
   ],
   imports: [
@@ -111,7 +116,11 @@ import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
     
     
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:TokenInterceptor,
+    multi:true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { IdcardsService } from '../idcards.service';
+import { IdCards } from '../id-cards';
 
 @Component({
   selector: 'app-idcards',
@@ -7,7 +8,7 @@ import { IdcardsService } from '../idcards.service';
   styleUrls: ['./idcards.component.css']
 })
 export class IdcardsComponent {
-idcardstudent:any=[];
+idcardstudent:IdCards[]=[];
 
   constructor(private idcardsService:IdcardsService) {
     this.getidcardstu();
@@ -15,7 +16,7 @@ idcardstudent:any=[];
 
   
   getidcardstu(): void {
-    this.idcardsService.getidcards().subscribe((resid:any)=>{
+    this.idcardsService.getidcards().subscribe((resid:IdCards[])=>{
       this.idcardstudent=resid;
     })
   }
@@ -26,7 +27,7 @@ idcardstudent:any=[];
   page:number=1;
 
   getidcardQueryParams() {
-    this.idcardsService.getidcardQueryParams(this.term, this.column, this.order, this.page).subscribe((resid:any)=>{
+    this.idcardsService.getidcardQueryParams(this.term, this.column, this.order, this.page).subscribe((resid:IdCards[])=>{
       this.idcardstudent=resid;
     },(err:any)=>{
       alert('Error fetching data with query params');
@@ -38,7 +39,7 @@ idcardstudent:any=[];
     this.term = this.searchTerm;
     this.getidcardQueryParams();
   }
-onSort(column:string, order:string){
+onSort(column: string, order:string){
   this.column=column;
   this.order=order;
   this.getidcardQueryParams();
@@ -60,13 +61,12 @@ onSort(column:string, order:string){
     this.page++;
     this.getidcardQueryParams();    
   }
-deleteids(id:number) {
+deleteids(id:IdCards['id']) {
 
   if(confirm('Are you sure you want to delete this ID card?')) {
-    this.idcardsService.deleteidcard(id).subscribe((res:any)=>{
+    this.idcardsService.deleteidcard(id).subscribe((res:IdCards)=>{
       alert('ID card deleted successfully');
-      this.idcardstudent=res;
-      location.reload();
+      this.getidcardstu();
     },(err:any)=>{
       alert('Error deleting ID card');
     })

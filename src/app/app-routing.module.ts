@@ -25,6 +25,8 @@ import { CreateVehicleComponent } from './create-vehicle/create-vehicle.componen
 import { RegistratorComponent } from './registrator/registrator.component';
 import { LoginGGuard } from './login-g.guard';
 import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
+import { AcountCreateComponent } from './acount-create/acount-create.component';
+import { ViewAcountComponent } from './view-acount/view-acount.component';
 
 
 const routes: Routes = [
@@ -52,7 +54,11 @@ const routes: Routes = [
     {path:'createuser',component:CreateUserComponent},
     {path:'createvehicle',component:CreateVehicleComponent},
     {path:'view-vehicle/:id',component:ViewVehicleComponent},
-    {path:'edit-vehicle/:id',component:CreateVehicleComponent}
+    {path:'edit-vehicle/:id',component:CreateVehicleComponent},
+    {path:'create-acount',component:AcountCreateComponent},
+    {path:'edit-acount/:id',component:AcountCreateComponent},
+    {path:'view-acount/:id',component:ViewAcountComponent},
+    {path:'products',loadChildren:()=>import('./products/products.module').then(p=>p.ProductsModule)}
 
   ]},
   {path:'registration',component:RegistratorComponent},

@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IdcardsService } from '../idcards.service';
 import { FormControl, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-new-id',
@@ -10,8 +10,15 @@ import { Router } from '@angular/router';
 })
 export class AddNewIDComponent {
 
+updateid:string='';
+  constructor(private idcardaddser:IdcardsService , private routernav:Router,private upadaterou:ActivatedRoute) { 
 
-  constructor(private idcardaddser:IdcardsService , private routernav:Router) { 
+    upadaterou.params.subscribe((upadaterou:any)=>{
+      this.updateid=upadaterou.id;
+      idcardaddser.viewidcards(upadaterou.id).subscribe((resedite:any)=>{
+        this.addForm.patchValue(resedite);
+      })
+    })
   }
 
   addForm:FormGroup =  new FormGroup({
@@ -29,15 +36,21 @@ export class AddNewIDComponent {
   })
 
   submit() {
-    if(this.addForm.valid){
-this.idcardaddser.addidcard(this.addForm.value).subscribe((addres:any)=>{
+    if(this.updateid) {
+      this.idcardaddser.editidcards(this.addForm.value,this.updateid).subscribe((res:any)=>{
+      alert('ID Card updated successfully');
+      this.addForm.reset();
+      this.routernav.navigateByUrl('/dashbord/idcard/idcards');
+
+      })
+
+    }
+    else {
+     this.idcardaddser.addidcard(this.addForm.value).subscribe((addres:any)=>{
       alert('ID Card added successfully');
       this.routernav.navigateByUrl('/dashbord/idcard/idcards');
 
     })
-    }
-    else {
-      alert('Please fill all the fields correctly');
     }
     
   }

@@ -1,0 +1,140 @@
+<div class="main-contentenar">
+    <form action="" [formGroup]="productsform">
+        <label for="title">Title:</label>
+        <input type="text" id="title" formControlName="title" [ngStyle]="{'border':productsform.get('title')?.touched ? '1px solid lightcoral' : '1px solid lightgreen'}"><br>
+        <div *ngIf="productsform.get('title')?.touched && productsform.get('title')?.invalid">
+            <p [ngStyle]="{'color':productsform.get('title')?.errors?.['required']?'red':'green'}"> Title is required
+            </p>
+            <p *ngIf="productsform.get('title')?.errors?.['minlength']"> Title must be at least 3 characters long</p>
+            <p *ngIf="productsform.get('title')?.errors?.['maxlength']"> Title cannot be longer than 10 characters</p>
+
+        </div>
+
+        <label for="description">Description:</label>
+        <textarea id="description" formControlName="description" [ngStyle]="{'border':productsform.get('description')?.touched?'2px solid red':'2px solid lightgreen'}"></textarea><br>
+        <div *ngIf="productsform.get('description')?.touched && productsform.get('description')?.invalid">
+            <p *ngIf="productsform.get('description')?.errors?.['required']">Description is required</p>
+            <p *ngIf="productsform.get('description')?.errors?.['minlength']">Description must be at least 5 characters long</p>
+            <p *ngIf="productsform.get('description')?.errors?.['maxlength']">Description cannot be longer than 20 characters</p>
+        </div>
+
+        <label for="price">Price:</label>
+        <input type="number" id="price" formControlName="price"><br>
+        <div *ngIf="productsform.get('price')?.touched && productsform.get('price')?.invalid">
+            <p *ngIf="productsform.get('price')?.errors?.['required']">Price is required</p>
+            <p *ngIf="productsform.get('price')?.errors?.['min']">Price must be at least 200</p>
+            <p *ngIf="productsform.get('price')?.errors?.['max']">Price cannot exceed 10000</p>
+        </div>
+
+        <label for="discountPercentage">Discount Percentage:</label>
+        <input type="number" id="discountPercentage" formControlName="discountPercentage"><br>
+        <label for="stock">Stock:</label>
+        <input type="number" id="stock" formControlName="stock"><br>
+        <label for="category">Category:</label>
+        <input type="text" id="category" formControlName="category"><br>
+        <label for="thumbnail">Thumbnail:</label>
+        <input type="text" id="thumbnail" formControlName="thumbnail"><br><br>
+        <!-- nested form group -->
+        <div formGroupName="dimensions">
+            <label for="width">Width:</label>
+            <input type="number" id="width" formControlName="width"><br>
+            <div *ngIf="productsform.get('dimensions')?.get('width')?.touched && productsform.get('dimensions')?.get('width')?.invalid">
+                <p *ngIf="productsform.get('dimensions')?.get('width')?.errors?.['required']">Width is required</p>
+                <p *ngIf="productsform.get('dimensions')?.get('width')?.errors?.['min']">Width must be at least 2</p>
+                <p *ngIf="productsform.get('dimensions')?.get('width')?.errors?.['max']">Width cannot exceed 10</p>
+
+            </div>
+
+            <label for="height">Height:</label>
+            <input type="number" id="height" formControlName="height"><br>
+            <label for="depth">Depth:</label>
+            <input type="number" id="depth" formControlName="depth"><br>
+        </div>
+
+        <!-- dainamic form group -->
+        <div>
+            <label for="tags">Tags:</label>
+            <input type="radio" id="tags" formControlName="tags" value="beauty">
+            <label for="">beauty</label>
+            <input type="radio" id="tags" formControlName="tags" value="mascara">
+            <label for="">mascara</label>
+
+
+            <div *ngIf="productsform.get('tags')?.value=='beauty'">
+                <label for="">Beauty:</label>
+                <input type="text" formControlName="beauty"><br>
+                <div *ngIf="productsform.get('beauty')?.touched && productsform.get('beauty')?.invalid">
+                    <p *ngIf="productsform.get('beauty')?.errors?.['required']">Beauty is required</p>
+                    <p *ngIf="productsform.get('beauty')?.errors?.['minlength']">Beauty must be at least 3 characters</p>
+                    <p *ngIf="productsform.get('beauty')?.errors?.['maxlength']">Beauty cannot exceed 10 characters</p>
+                </div>
+            </div>
+            <!--  -->
+            <div *ngIf="productsform.get('tags')?.value=='mascara'">
+                <label for="">Mascara:</label>
+                <input type="text" formControlName="mascara">
+                 <div *ngIf="productsform.get('mascara')?.touched && productsform.get('mascara')?.invalid">
+                    <p *ngIf="productsform.get('mascara')?.errors?.['required']">Mascara is required</p>
+                    <p *ngIf="productsform.get('mascara')?.errors?.['minlength']">Mascara must be at least 3 characters</p>
+                    <p *ngIf="productsform.get('mascara')?.errors?.['maxlength']">Mascara cannot exceed 10 characters</p>
+                </div>
+
+            </div>
+        </div>
+
+
+        <label for="reviews">Reviews:</label>
+        <button (click)="addReview()">Add Review</button>
+        <div formArrayName="reviews">
+            <div *ngFor="let review of reviewformArry.controls; let i=index">
+                <div formGroupName="{{i}}">
+                    <h3> Review->{{i+1}}</h3>
+                    <label for="">rating:</label>
+                    <input type="text" formControlName="rating"><br>
+                    <label for="">Comment:</label>
+                    <input type="text" formControlName="comment"><br>
+                    <div *ngIf="reviewformArry.controls[i].get('comment')?.touched && reviewformArry.controls[i].get('comment')?.invalid">
+                        <p *ngIf="reviewformArry.controls[i].get('comment')?.errors?.['required']">Comment is required</p>
+                        <p *ngIf="reviewformArry.controls[i].get('comment')?.errors?.['minlength']">Comment must be at least 5 characters</p>
+                        <p *ngIf="reviewformArry.controls[i].get('comment')?.errors?.['maxlength']">Comment cannot exceed 20 characters</p>
+                    </div>
+
+                    <label for="">date:</label>
+                    <input type="number" formControlName="date"><br>
+                    <label for="">reviewerName:</label>
+                    <input type="text" formControlName="reviewerName"><br>
+                      <div *ngIf="reviewformArry.controls[i].get('reviewerName')?.touched && reviewformArry.controls[i]?.invalid">
+                        <p *ngIf="reviewformArry.controls[i].get('reviewerName')?.errors?.['required']">Reviewer Name is required</p>
+                        <p *ngIf="reviewformArry.controls[i].get('reviewerName')?.errors?.['minlength']">Reviewer Name must be at least 5 characters</p>
+                        <p *ngIf="reviewformArry.controls[i].get('reviewerName')?.errors?.['maxlength']">Reviewer Name cannot exceed 20 characters</p>
+
+                      </div>
+
+                    <label for="">reviewerEmail:</label>
+                    <input type="email" formControlName="reviewerEmail">
+                    <div>
+                        
+                    </div>
+                    <button type="button" (click)="removeReview(i)">Remove Review</button>
+
+                    <hr>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+        <button type="submit" (click)="addform()">Create Product</button>
+
+
+
+    </form>
+
+
+
+</div>

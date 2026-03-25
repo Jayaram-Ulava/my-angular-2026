@@ -51,8 +51,7 @@ Sort
 <!-- ID CARDS -->
 <div class="row mt-4">
 
-<div class="col-md-6 mb-4" *ngFor="let id of idcardstudent">
-
+<div class="col-md-6 mb-4" *ngFor="let id of idcardstudent" routerLink="/dashbord/idcard/view-student/{{id.id}}">
 <div class="school-id-card">
 
 <!-- Header -->
@@ -89,8 +88,8 @@ Sort
 
 <!-- Footer -->
 <div class="id-footer">
-    <button>Edite</button>
-    <button>View</button>
+    <button routerLink="/dashbord/idcard/edit-student/{{id.id}}">Edit</button>
+    <button routerLink="/dashbord/idcard/view-student/{{id.id}}">View</button>
     <button (click)="deleteids(id.id)">Delete</button>
 <span>ID : {{id.id}}</span>
 <span class="principal">Principal</span>

@@ -1,0 +1,81 @@
+<div class="page" *ngIf="viewstudent"
+     [ngStyle]="{
+       'background-image': 'url(' + viewstudent.school_logo + ')'
+     }">
+
+  <!-- OVERLAY -->
+  <div class="overlay">
+
+    <!-- HEADER -->
+    <div class="header">
+      
+      <img [src]="viewstudent.school_logo">
+      <div>
+        <h2>{{viewstudent.school_name}}</h2>
+        <p>{{viewstudent.school_city}} - {{viewstudent.school_pin}}</p>
+      </div>
+    </div>
+
+    <!-- PROFILE -->
+    <div class="profile">
+      
+      <img [src]="viewstudent.profile_picture">
+      <div>
+        <h1>{{viewstudent.name}}</h1>
+        <p>Student ID: {{viewstudent.id}}</p>
+      </div>
+    </div>
+
+    <!-- DETAILS -->
+    <div class="section">
+          <h2 routerLink="/dashbord/idcard/idcards">❌</h2>
+
+      <h3>Personal Details</h3>
+
+      <div class="row">
+        <div class="item">
+          <label>Phone</label>
+          <p>{{viewstudent.phone}}</p>
+        </div>
+
+        <div class="item">
+          <label>Email</label>
+          <p>{{viewstudent.email}}</p>
+        </div>
+
+        <div class="item">
+          <label>Date of Birth</label>
+          <p>{{viewstudent.dob | date}}</p>
+        </div>
+
+        <div class="item">
+          <label>City</label>
+          <p>{{viewstudent.city}}</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- SCHOOL DETAILS -->
+    <div class="section">
+      <h3>School Details</h3>
+
+      <div class="row">
+        <div class="item">
+          <label>School Name</label>
+          <p>{{viewstudent.school_name}}</p>
+        </div>
+
+        <div class="item">
+          <label>School City</label>
+          <p>{{viewstudent.school_city}}</p>
+        </div>
+
+        <div class="item">
+          <label>PIN Code</label>
+          <p>{{viewstudent.school_pin}}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

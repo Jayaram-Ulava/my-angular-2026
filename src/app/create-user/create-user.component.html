@@ -5,8 +5,89 @@
     <input type="number" id="lname" name="lname" formControlName="age">
     <label for="">email</label>
     <input type="email" name="" id="" formControlName="email">
-    <label for="">phone</label>
-    <input type="number" name="" id="" formControlName="phone">
+<div *ngIf="userform.get('email')?.touched && userform.get('email')?.invalid">
+    <p *ngIf="userform.get('email')?.errors?.['required']">
+        Email is required
+    </p>
+    <p *ngIf="userform.get('email')?.errors?.['email']">
+        Please enter a valid email address
+    </p>
+    <p *ngIf="userform.get('email')?.errors?.['googleemails']">
+        Please enter a valid Google email address
+    </p>
+</div>
 
-    <button type="button" (click)="getuserdata()">Submit</button>
+    <label for="">phone</label>
+    <input type="number" name="" id="" formControlName="phone"><br>
+
+    <label for="password">Password:</label>
+    <input type="text" id="password" name="password" formControlName="password">
+   <div *ngIf="userform.get('password')?.touched && userform.get('password')?.invalid">
+  <p *ngIf="userform.get('password')?.errors?.['required']">
+    Password is required
+  </p>
+  <p *ngIf="userform.get('password')?.errors?.['pattern']">
+    Password must contain at least one lowercase letter, one uppercase letter, one number, and one special character
+  </p>
+</div>
+<!-- nested form group -->
+    <div formGroupName="address">
+        <h4 for="">Address:</h4>
+        <label for="">city</label>
+        <input type="text" name="" id="" formControlName="city"><br>
+        <label for="">pin</label>
+        <input type="number" name="" id="" formControlName="pin">
+    </div><br>
+<!-- dianamic form group -->
+    <div>
+<label for="">Type: </label>
+<input type="radio" id="" name="type" formControlName="type" value="day scholar">
+<label for="">Day Scholar</label>
+<input type="radio" id="" name="type" formControlName="type" value="hostel student">
+<label for="">Hostel Student</label><br>
+
+
+<div *ngIf="userform.get('type')?.value=='day scholar'">
+     <label for="Busfee">Bus Fee:</label>
+    <input type="text" id="Busfee" name="Busfee" formControlName="busfee"><br>
+
+</div>
+
+<div *ngIf="userform.get('type')?.value=='hostel student'">
+    <label for="Hostlfee">Hostel Fee:</label>
+    <input type="text" id="Hostlfee" name="Hostlfee" formControlName="hostlfee">
+
+</div>
+        
+    </div>
+
+    <div>
+
+        <label for="Cards">Cards:</label>
+        <button type="button" (click)="addcard()">Add Card</button>
+        <br><br>
+<!-- form Arry  -->
+        <div formArrayName="cards">
+            <div *ngFor="let card of cardArrayname.controls; let i=index">
+                <div formGroupName="{{i}}">
+                    <h3> Card->{{i+1}}</h3>
+                    <label for="">Name:</label>
+                    <input type="text" formControlName="name">
+                    <label for="">Number:</label>
+                    <input type="text" formControlName="Number">
+                    <label for="">CVV:</label>
+                    <input type="text" formControlName="cvv">
+                    <button (click)="deletecard(i)">delete</button>
+
+                    <hr>
+                </div>
+
+            </div>
+
+        </div>
+        
+
+    </div>
+
+    <button  (click)="getuserdata()">Submit</button>
 </form>
