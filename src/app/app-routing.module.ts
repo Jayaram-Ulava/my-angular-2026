@@ -27,6 +27,9 @@ import { LoginGGuard } from './login-g.guard';
 import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
 import { AcountCreateComponent } from './acount-create/acount-create.component';
 import { ViewAcountComponent } from './view-acount/view-acount.component';
+import { ChildComponent } from './child/child.component';
+import { ParentComponent } from './parent/parent.component';
+import { RatingComponent } from './rating/rating.component';
 
 
 const routes: Routes = [
@@ -58,7 +61,10 @@ const routes: Routes = [
     {path:'create-acount',component:AcountCreateComponent},
     {path:'edit-acount/:id',component:AcountCreateComponent},
     {path:'view-acount/:id',component:ViewAcountComponent},
-    {path:'products',loadChildren:()=>import('./products/products.module').then(p=>p.ProductsModule)}
+    {path:'products',loadChildren:()=>import('./products/products.module').then(p=>p.ProductsModule)},
+    {path:'child',component:ChildComponent},
+    {path:'parent',component:ParentComponent},
+    {path:'rating',component:RatingComponent}
 
   ]},
   {path:'registration',component:RegistratorComponent},

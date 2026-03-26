@@ -49,6 +49,10 @@ import { ViewVehicleComponent } from './view-vehicle/view-vehicle.component';
 import { AcountCreateComponent } from './acount-create/acount-create.component';
 import { ViewAcountComponent } from './view-acount/view-acount.component';
 import { TokenInterceptor } from './token.interceptor';
+import { ParentComponent } from './parent/parent.component';
+import { ChildComponent } from './child/child.component';
+import { RatingComponent } from './rating/rating.component';
+import { TextareaComponent } from './textarea/textarea.component';
 
 
 @NgModule({
@@ -82,6 +86,10 @@ import { TokenInterceptor } from './token.interceptor';
     ViewVehicleComponent,
     AcountCreateComponent,
     ViewAcountComponent,
+    ParentComponent,
+    ChildComponent,
+    RatingComponent,
+    TextareaComponent,
     
   ],
   imports: [

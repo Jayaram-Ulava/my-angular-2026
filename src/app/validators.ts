@@ -4,7 +4,7 @@ export function googleemail(control: AbstractControl) {
   if (
     control.errors?.['email'] ||
     control.errors?.['required'] ||
-    control.value?.includes('@gmail.com')
+    control.value?.includes('@gmail.com') && control.value?.includes('@googlemail.com')
   ) {
     return null;
   } else {

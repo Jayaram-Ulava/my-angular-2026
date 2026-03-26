@@ -11,7 +11,7 @@
     <div class="image-section">
 
       <div class="rating-badge">
-        ⭐ {{products.rating.rate}}
+        <app-rating [rating]="products.rating.rate"></app-rating>
       </div>
 
       <img [src]="products.image" alt="product">
