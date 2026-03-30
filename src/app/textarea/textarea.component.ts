@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class TextareaComponent {
 
 
-  textareanumber:number=50;
+textareanumber:number=50;
 name:number=0;
 }

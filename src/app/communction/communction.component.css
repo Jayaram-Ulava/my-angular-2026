@@ -1,0 +1,46 @@
+/* parent component css */
+
+.parent-commuction {
+  font-family: 'Segoe UI', sans-serif;
+}
+
+/* Card Design */
+.custom-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+  height: auto; /* ✅ FIXED HEIGHT ISSUE */
+}
+
+.custom-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Header */
+.card-header-custom {
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 600;
+  color: white;
+  text-align: center;
+}
+
+/* Body */
+.card-body-custom {
+  padding: 20px;
+}
+
+/* Reduce extra spacing inside child components */
+app-calculetar,
+app-summry {
+  display: block;
+}
+
+/* Mobile Optimization */
+@media (max-width: 768px) {
+  .custom-card {
+    margin-bottom: 15px;
+  }
+}

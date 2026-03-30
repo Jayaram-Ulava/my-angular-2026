@@ -31,6 +31,8 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 import { RolePipe } from './role.pipe';
 import { PricePipe } from './price.pipe';
+
+
 import { MailsComponent } from './mails/mails.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { CapitalDirective } from './capital.directive';
@@ -53,6 +55,13 @@ import { ParentComponent } from './parent/parent.component';
 import { ChildComponent } from './child/child.component';
 import { RatingComponent } from './rating/rating.component';
 import { TextareaComponent } from './textarea/textarea.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
+import { CommunctionComponent } from './communction/communction.component';
+import { CalculetarComponent } from './calculetar/calculetar.component';
+import { SummryComponent } from './summry/summry.component';
+import { ActionComponent } from './action/action.component';
 
 
 @NgModule({
@@ -90,6 +99,13 @@ import { TextareaComponent } from './textarea/textarea.component';
     ChildComponent,
     RatingComponent,
     TextareaComponent,
+    ItemsComponent,
+    NavComponent,
+    CartComponent,
+    CommunctionComponent,
+    CalculetarComponent,
+    SummryComponent,
+    ActionComponent,
     
   ],
   imports: [

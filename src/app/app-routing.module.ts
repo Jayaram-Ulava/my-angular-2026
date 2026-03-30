@@ -30,6 +30,10 @@ import { ViewAcountComponent } from './view-acount/view-acount.component';
 import { ChildComponent } from './child/child.component';
 import { ParentComponent } from './parent/parent.component';
 import { RatingComponent } from './rating/rating.component';
+import { ItemsComponent } from './items/items.component';
+import { NavComponent } from './nav/nav.component';
+import { CartComponent } from './cart/cart.component';
+import { CommunctionComponent } from './communction/communction.component';
 
 
 const routes: Routes = [
@@ -64,7 +68,11 @@ const routes: Routes = [
     {path:'products',loadChildren:()=>import('./products/products.module').then(p=>p.ProductsModule)},
     {path:'child',component:ChildComponent},
     {path:'parent',component:ParentComponent},
-    {path:'rating',component:RatingComponent}
+    {path:'rating',component:RatingComponent},
+    {path:'items',component:ItemsComponent},
+    {path:'nav',component:NavComponent},
+    {path:'cart',component:CartComponent},
+    {path:'commuction',component:CommunctionComponent}
 
   ]},
   {path:'registration',component:RegistratorComponent},

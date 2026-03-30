@@ -1,0 +1,50 @@
+/* action.component.css */
+
+div {
+  margin-top: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 28px;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+button {
+  margin: 8px;
+  padding: 10px 18px;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s ease;
+  color: white;
+}
+
+/* Different colors for buttons */
+button:nth-child(2) {
+  background: #4CAF50;
+}
+
+button:nth-child(3) {
+  background: #f44336;
+}
+
+button:nth-child(4) {
+  background: #2196F3;
+}
+
+button:nth-child(5) {
+  background: #ff9800;
+}
+
+button:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+button:active {
+  transform: scale(0.95);
+}

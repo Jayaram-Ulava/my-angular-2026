@@ -1,0 +1,60 @@
+/* Root container */
+.new-parent {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;              /* spacing between sections */
+}
+
+/* Calculator box */
+.calcutet {
+  background: #ffffff;
+  padding: 18px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Title */
+.calcutet h1 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #333;
+  text-align: center;
+}
+
+/* Labels */
+.calcutet label {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* Inputs */
+.calcutet input {
+  width: 100%;
+  height: 38px;                 /* ✅ fixed height */
+  padding: 6px 10px;
+  margin-bottom: 12px;          /* ✅ proper spacing */
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+/* Focus effect */
+.calcutet input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 4px rgba(13, 110, 253, 0.3);
+  outline: none;
+}
+
+/* Action section */
+.action {
+  margin-top: 5px;   /* reduce height gap */
+}
+
+/* Remove extra <br> spacing effect */
+.calcutet br {
+  display: none;
+}

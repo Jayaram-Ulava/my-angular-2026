@@ -3,7 +3,7 @@
 
 
 <label for="">Add in Parent</label>
-<input type="text" [(ngModel)]="parent">
+<input type="text" [(ngModel)]="parent ">
 
 <h1>Add in Parent:->{{childone}}</h1>
 <app-child [child]="parent" (Bevent)="addchildcode($event)"></app-child> <br><br>
@@ -11,3 +11,5 @@
 <label for="">Enter text:</label>
 
 <app-textarea></app-textarea>
+
+
